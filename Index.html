@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Rivera – Researcher</title>
+    <meta name="description" content="Alex Rivera – AI & Human-Computer Interaction Researcher" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Brain</text></svg>" />
+
+    <style>
+      :root {
+        --bg: #0d1117;
+        --text: #c9d1d9;
+        --accent: #58a6ff;
+        --card: #161b22;
+        --border: #30363d;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #ffffff;
+          --text: #24292f;
+          --accent: #0969da;
+          --card: #f6f8fa;
+          --border: #d0d7de;
+        }
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 2rem 1rem;
+        min-height: 100vh;
+      }
+
+      header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 5rem;
+      }
+      h1 {
+        font-size: 3.8rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, #58a6ff, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .tagline {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+      }
+      .socials a {
+        color: var(--text);
+        margin: 0 15px;
+        font-size: 1.6rem;
+        text-decoration: none;
+        opacity: 0.8;
+      }
+      .socials a:hover { opacity: 1; color: var(--accent); }
+
+      main { max-width: 1000px; margin: 0 auto; }
+      section { margin-bottom: 6rem; }
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+      h2::after {
+        content: "";
+        width: 100px;
+        height: 5px;
+        background: var(--accent);
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+      .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+
+      ul { padding-left: 1.8rem; }
+      li {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .contact {
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer {
+        text-align: center;
+        padding: 4rem 0 2rem;
+        color: #8b949e;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 640px) {
+        h1 { font-size: 2.8rem; }
+        .tagline { font-size: 1.3rem; }
+        .socials a { margin: 0 10px; font-size: 1.4rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Alex Rivera</h1>
+      <p class="tagline">AI Researcher → HCI → Open Science</p>
+      <div class="socials">
+        <a href="https://github.com" aria-label="GitHub">GitHub</a>
+        <a href="https://twitter.com" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:hello@alexrivera.dev">Email</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+          Passionate researcher working at the intersection of artificial intelligence and human-computer interaction. 
+          Currently building explainable AI systems and tools that make science more open and reproducible.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Interpretable Vision Transformers</h3>
+            <p>New attention visualization technique that improves model explainability by 41%. Accepted at NeurIPS 2024.</p>
+          </div>
+          <div class="card">
+            <h3>LLM Judge Benchmark</h3>
+            <p>Open-source framework comparing GPT-4, Claude 3, Gemini, and Llama 3 as automated evaluators. 15k+ stars.</p>
+          </div>
+          <div class="card">
+            <h3>WebXR Gesture Control</h3>
+            <p>Zero-dependency hand tracking in the browser using MediaPipe. Runs at 60 FPS on mobile.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Selected Publications</h2>
+        <ul>
+          <li>Rivera et al. (2025). "Calibrating LLM Judges for Reliable Evaluation" – <strong>ICML 2025</strong></li>
+          <li>Rivera & Zhang (2024). "Visual Explanations for Vision Transformers" – <strong>NeurIPS 2024</strong></li>
+          <li>Rivera et al. (2023). "OpenReview+: AI-Assisted Peer Review" – <strong>CHI 2024</strong></li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+        <p>Always happy to chat about research, collaboration, or just cool ideas.</p>
+        <p style="margin-top: 1.5rem;">
+          <a href="mailto:hello@alexrivera.dev">hello@alexrivera.dev</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 Alex Rivera — Handcrafted with HTML & love — Hosted on GitHub Pages
+    </footer>
+  </body>
+</html>
