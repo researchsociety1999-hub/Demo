@@ -3,146 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Rivera – Researcher</title>
+    <title>Alex Rivera – Cyberpunk Researcher</title>
     <meta name="description" content="Alex Rivera – AI & Human-Computer Interaction Researcher" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Brain</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>脑</text></svg>" />
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap');
+
       :root {
-        --bg: #0d1117;
-        --text: #c9d1d9;
-        --accent: #58a6ff;
-        --card: #161b22;
-        --border: #30363d;
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #ffffff;
-          --text: #24292f;
-          --accent: #0969da;
-          --card: #f6f8fa;
-          --border: #d0d7de;
-        }
+        --bg: #0d001a;
+        --surface: #1a0033;
+        --primary: #00ffea;
+        --secondary: #ff00c8;
+        --accent: #39ff14;
+        --text: #e0e0ff;
+        --muted: #8877aa;
       }
 
       * { margin: 0; padding: 0; box-sizing: border-box; }
+      
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family: 'Roboto Mono', monospace;
         background: var(--bg);
         color: var(--text);
-        line-height: 1.6;
+        line-height: 1.7;
         padding: 2rem 1rem;
         min-height: 100vh;
+        background-image: 
+          radial-gradient(circle at 20% 80%, rgba(120, 0, 255, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(0, 255, 234, 0.15) 0%, transparent 50%),
+          linear-gradient(180deg, transparent 0%, #0a0022 100%);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(0,255,234,0.03) 50px, rgba(0,255,234,0.03) 52px),
+                    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,0,200,0.03) 50px, rgba(255,0,200,0.03) 52px);
+        pointer-events: none;
+        animation: grid 120s linear infinite;
+      }
+
+      @keyframes grid {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
+      }
+
+      /* Glitch effect - fixed version */
+      .glitch {
+        position: relative;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+      }
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch::before {
+        animation: glitch-1 2s infinite;
+        color: var(--primary);
+        clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+      }
+      .glitch::after {
+        animation: glitch-2 3s infinite;
+        color: var(--secondary);
+        clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+      }
+
+      @keyframes glitch-1 {
+        0%,100% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(2px, -2px); }
+        60% { transform: translate(-2px, -2px); }
+        80% { transform: translate(2px, 2px); }
+      }
+      @keyframes glitch-2 {
+        0%,100% { transform: translate(0); }
+        30% { transform: translate(3px, -3px); }
+        70% { transform: translate(-3px, 3px); }
       }
 
       header {
         text-align: center;
-        max-width: 800px;
-        margin: 0 auto 5rem;
+        max-width: 900px;
+        margin: 0 auto 6rem;
+        padding: 4rem 0;
       }
-      h1 {
-        font-size: 3.8rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, #58a6ff, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .tagline {
-        font-size: 1.5rem;
-        color: var(--accent);
-        margin-bottom: 1.5rem;
-      }
-      .socials a {
-        color: var(--text);
-        margin: 0 15px;
-        font-size: 1.6rem;
-        text-decoration: none;
-        opacity: 0.8;
-      }
-      .socials a:hover { opacity: 1; color: var(--accent); }
 
-      main { max-width: 1000px; margin: 0 auto; }
-      section { margin-bottom: 6rem; }
+      h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 5.5rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(0,255,234,0.5);
+      }
+
+      .tagline {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.8rem;
+        color: var(--primary);
+        text-shadow: 0 0 20px var(--primary);
+        margin: 2rem 0;
+        letter-spacing: 4px;
+      }
+
+      .socials a {
+        color: var(--primary);
+        margin: 0 20px;
+        font-size: 1.8rem;
+        text-decoration: none;
+        text-shadow: 0 0 10px var(--primary);
+        transition: all 0.3s;
+        position: relative;
+      }
+      .socials a:hover {
+        color: var(--accent);
+        text-shadow: 0 0 20px var(--accent);
+        transform: translateY(-5px);
+      }
+      .socials a::after {
+        content: '';
+        position: absolute;
+        bottom: -8px; left: 0; right: 0;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: transform 0.4s;
+      }
+      .socials a:hover::after { transform: scaleX(1); }
+
+      main { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+      section { margin-bottom: 8rem; }
+
       h2 {
-        font-size: 2.5rem;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 3rem;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
+        color: var(--secondary);
+        text-shadow: 0 0 20px var(--secondary);
         position: relative;
       }
       h2::after {
         content: "";
-        width: 100px;
-        height: 5px;
-        background: var(--accent);
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 3px;
+        display: block;
+        width: 200px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        margin: 20px auto;
+        box-shadow: 0 0 20px var(--primary);
       }
 
       .grid {
         display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       }
+
       .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 16px;
+        background: rgba(26, 0, 51, 0.7);
+        border: 1px solid var(--primary);
+        border-radius: 8px;
         padding: 2rem;
-        transition: all 0.3s ease;
+        transition: all 0.4s;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(0,255,234,0.1) 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
       }
       .card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-15px) scale(1.02);
         border-color: var(--accent);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        box-shadow: 0 0 40px rgba(0,255,234,0.4);
       }
+      .card:hover::before { opacity: 1; }
+
       .card h3 {
-        font-size: 1.5rem;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.6rem;
         margin-bottom: 1rem;
-        color: var(--accent);
+        color: var(--primary);
+        text-shadow: 0 0 15px var(--primary);
       }
 
-      ul { padding-left: 1.8rem; }
+      ul { padding-left: 2rem; list-style: none; }
       li {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 2rem;
         font-size: 1.1rem;
       }
-
-      .contact {
-        text-align: center;
-        font-size: 1.3rem;
+      li::before {
+        content: ">>";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
       }
+
       .contact a {
         color: var(--accent);
         text-decoration: none;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 20px var(--accent);
+        padding: 15px 40px;
+        border: 2px solid var(--accent);
+        border-radius: 50px;
+        display: inline-block;
+        transition: all 0.4s;
+      }
+      .contact a:hover {
+        background: var(--accent);
+        color: var(--bg);
+        box-shadow: 0 0 30px var(--accent);
+        transform: scale(1.1);
       }
 
       footer {
         text-align: center;
-        padding: 4rem 0 2rem;
-        color: #8b949e;
-        font-size: 0.95rem;
+        padding: 6rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-shadow: 0 0 10px var(--primary);
       }
 
-      @media (max-width: 640px) {
-        h1 { font-size: 2.8rem; }
-        .tagline { font-size: 1.3rem; }
-        .socials a { margin: 0 10px; font-size: 1.4rem; }
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,234,0.03) 2px, rgba(0,255,234,0.03) 4px);
+        pointer-events: none;
+        animation: scanline 8s linear infinite;
+        z-index: 1;
+      }
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      @media (max-width: 768px) {
+        h1 { font-size: 3.8rem; }
+        .tagline { font-size: 1.4rem; }
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h1>Alex Rivera</h1>
-      <p class="tagline">AI Researcher → HCI → Open Science</p>
+      <!-- Fixed: data-text is now a proper HTML attribute -->
+      <h1 class="glitch" data-text="ALEX RIVERA">ALEX RIVERA</h1>
+      <p class="tagline">AI RESEARCHER // HCI // NEURAL HACKER</p>
       <div class="socials">
         <a href="https://github.com" aria-label="GitHub">GitHub</a>
         <a href="https://twitter.com" aria-label="Twitter">Twitter</a>
@@ -153,33 +283,33 @@
 
     <main>
       <section id="about">
-        <h2>About Me</h2>
-        <p style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
-          Passionate researcher working at the intersection of artificial intelligence and human-computer interaction. 
-          Currently building explainable AI systems and tools that make science more open and reproducible.
+        <h2>SYSTEM ONLINE</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.3rem; text-shadow: 0 0 10px rgba(0,255,234,0.3);">
+          Neural interface active. Operating at the bleeding edge of artificial intelligence and human-computer symbiosis. 
+          Currently engineering explainable neural architectures and open-source frameworks that democratize frontier AI.
         </p>
       </section>
 
       <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2>NEURAL PROJECTS</h2>
         <div class="grid">
           <div class="card">
             <h3>Interpretable Vision Transformers</h3>
-            <p>New attention visualization technique that improves model explainability by 41%. Accepted at NeurIPS 2024.</p>
+            <p>Next-gen attention visualization protocol // 41% explainability boost // Deployed NeurIPS 2024</p>
           </div>
           <div class="card">
             <h3>LLM Judge Benchmark</h3>
-            <p>Open-source framework comparing GPT-4, Claude 3, Gemini, and Llama 3 as automated evaluators. 15k+ stars.</p>
+            <p>Open-source evaluator matrix // GPT-4 vs Claude 3 vs Gemini vs Llama 3 // 15k+ stars and climbing</p>
           </div>
           <div class="card">
             <h3>WebXR Gesture Control</h3>
-            <p>Zero-dependency hand tracking in the browser using MediaPipe. Runs at 60 FPS on mobile.</p>
+            <p>Zero-dependency neural hand tracking // MediaPipe core // 60 FPS on mobile edge devices</p>
           </div>
         </div>
       </section>
 
       <section id="publications">
-        <h2>Selected Publications</h2>
+        <h2>NEURAL PUBLICATIONS</h2>
         <ul>
           <li>Rivera et al. (2025). "Calibrating LLM Judges for Reliable Evaluation" – <strong>ICML 2025</strong></li>
           <li>Rivera & Zhang (2024). "Visual Explanations for Vision Transformers" – <strong>NeurIPS 2024</strong></li>
@@ -188,16 +318,16 @@
       </section>
 
       <section id="contact" class="contact">
-        <h2>Let's Connect</h2>
-        <p>Always happy to chat about research, collaboration, or just cool ideas.</p>
-        <p style="margin-top: 1.5rem;">
+        <h2>ESTABLISH UPLINK</h2>
+        <p>Ready for research collaboration, neural hacking sessions, or high-bandwidth idea transfer.</p>
+        <p style="margin-top: 2rem;">
           <a href="mailto:hello@alexrivera.dev">hello@alexrivera.dev</a>
         </p>
       </section>
     </main>
 
     <footer>
-      © 2025 Alex Rivera — Handcrafted with HTML & love — Hosted on GitHub Pages
+      © 2025 ALEX RIVERA — NEURAL INTERFACE v9.9 — HOSTED ON GITHUB PAGES
     </footer>
   </body>
 </html>
