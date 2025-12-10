@@ -26,6 +26,7 @@
       overflow-x:hidden;
     }
 
+    /* DATA-THEMED BACKGROUND */
     body::before{
       content:"";
       position:fixed;
@@ -731,8 +732,6 @@
     .exp-role{
       font-size:0.85rem;
       color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:0.06em;
     }
     .exp-period{
       font-size:0.8rem;
@@ -745,22 +744,6 @@
       color:var(--muted);
       line-height:1.6;
       margin-bottom:12px;
-    }
-    .exp-skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .skill-tag{
-      background:rgba(212,175,55,0.1);
-      border:1px solid rgba(212,175,55,0.3);
-      color:var(--accent);
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:0.75rem;
-      text-transform:uppercase;
-      letter-spacing:0.05em;
-      font-weight:600;
     }
 
     .steps{
@@ -844,37 +827,11 @@
       margin-bottom:12px;
       color:var(--text);
     }
-    .project-metric{
-      font-size:1.1rem;
-      font-weight:700;
-      color:var(--accent);
-      margin-bottom:16px;
-    }
     .project-desc{
       font-size:0.9rem;
       color:var(--muted);
       line-height:1.6;
-      margin-bottom:20px;
-    }
-    .project-list{
-      list-style:none;
-      font-size:0.85rem;
-      color:var(--muted);
-      display:grid;gap:8px;
-      margin-bottom:20px;
-    }
-    .project-list li::before{
-      content:"▸ ";
-      color:var(--accent);
-      font-weight:bold;
-    }
-    .project-card:hover{
-      border-color:var(--accent);
-      transform:translateY(-12px);
-      box-shadow:0 30px 60px rgba(212,175,55,0.3);
-    }
-    .project-card:hover::before{
-      opacity:1;
+      margin-bottom:12px;
     }
 
     .skills-container{
@@ -1149,8 +1106,8 @@
       <div>
         <h1>Hrushikesh<br><span>Singh Bondili</span></h1>
         <p class="hero-sub">
-          <span class="hero-sub-strong">Senior Business Analyst specialising in enterprise-scale analytics platforms for Fortune 500 organisations.</span><br>
-          5+ years translating complex business needs into scalable solutions with Power BI, Tableau, SQL, Python, and modern cloud data stacks. Delivered 25% faster reporting cycles, 35% higher data accuracy, 40% faster ETL pipelines, and 97% on-time delivery across critical programs.[file:109]
+          <span class="hero-sub-strong">5+ years of Business Analyst experience building and optimizing enterprise-scale analytics platforms for Fortune 500 organizations.</span><br>
+          Proven ability to translate complex business needs into scalable solutions using Power BI, Tableau, SQL, and Python. Delivered 25% faster reporting cycles, 35% higher data accuracy, 40% faster ETL pipelines, and 97% on-time delivery across critical programs.[file:110]
         </p>
         <div class="hero-stats">
           <div class="stat-item">
@@ -1187,262 +1144,187 @@
     <div class="section-label">Key Outcomes</div>
     <h2 class="section-title">Impact & Scale</h2>
     <p class="section-desc">
-      A snapshot of efficiency, quality, delivery, and business impact across large programmes and complex data estates.[file:109]
+      Efficiency: 25% reporting cycle reduction · 40% ETL runtime improvement · 70% manual reporting eliminated (18+ hours/month) · 10+ team hours saved weekly. Quality & Compliance: 35% improvement in data accuracy · 100% SDLC adherence · 3 clean audits · full SOX control coverage. Delivery & Scale: 97% on-time delivery · 200+ concurrent users supported · 50K+ daily transactions · 500K+ records analyzed. Business Impact: $2M+ expansion approved · $500K+ annual savings from predictive maintenance · 200+ readmissions avoided yearly · 150+ daily analytics users.[file:110]
     </p>
-    
-    <div class="achievements-container">
-      <div class="achievement-card">
-        <span class="achievement-badge">Efficiency</span>
-        <div class="achievement-value">25%</div>
-        <div class="achievement-title">Reporting Cycle Reduction</div>
-        <div class="achievement-desc">Cut reporting cycles from 3 to 2.25 days and eliminated 70% of manual reporting through automated BI and SQL refreshes.[file:109]</div>
-      </div>
-
-      <div class="achievement-card">
-        <span class="achievement-badge">Pipelines</span>
-        <div class="achievement-value">40%</div>
-        <div class="achievement-title">ETL Runtime Improvement</div>
-        <div class="achievement-desc">Optimised ETL jobs and SQL workloads, improving runtime by 40% and sustaining 99.99% transaction success rates in production.[file:109]</div>
-      </div>
-
-      <div class="achievement-card">
-        <span class="achievement-badge">Quality</span>
-        <div class="achievement-value">35%</div>
-        <div class="achievement-title">Data Accuracy Uplift</div>
-        <div class="achievement-desc">Established metadata and data quality standards at ingestion, reducing downstream data defects by 35% while maintaining 100% SDLC and SOX control compliance.[file:109]</div>
-      </div>
-
-      <div class="achievement-card">
-        <span class="achievement-badge">Delivery</span>
-        <div class="achievement-value">97%</div>
-        <div class="achievement-title">On‑Time Delivery</div>
-        <div class="achievement-desc">Delivered analytics and migration initiatives with 97% on‑time completion, supporting 200+ concurrent users and 150+ daily analytics consumers.[file:109]</div>
-      </div>
-
-      <div class="achievement-card">
-        <span class="achievement-badge">Business Impact</span>
-        <div class="achievement-value">$2M+</div>
-        <div class="achievement-title">Expansion & Savings</div>
-        <div class="achievement-desc">Supported a $2M EV market expansion plan and unlocked $500K+ annual savings from predictive maintenance and reduced downtime.[file:109]</div>
-      </div>
-
-      <div class="achievement-card">
-        <span class="achievement-badge">Operations</span>
-        <div class="achievement-value">99.9%</div>
-        <div class="achievement-title">Uptime & Incident SLAs</div>
-        <div class="achievement-desc">Maintained 99.9% incident SLAs and reduced mean time to resolution by 35% via monitoring, runbooks, and root‑cause analysis.[file:109]</div>
-      </div>
-    </div>
   </section>
 
   <section id="about" class="fade-in">
     <div class="section-label">Profile</div>
     <h2 class="section-title">Business‑First, Data‑Deep</h2>
     <p class="section-desc">
-      Blending BRD/FRD authoring, stakeholder workshops, and BPMN with advanced SQL, Python, and cloud platforms to deliver analytics that auditors, executives, and engineers can all trust.[file:109]
+      Specialized in data governance, ETL/ELT architecture, incident analytics, and regulatory compliance (SOX, HIPAA, AML). Combines technical depth with strong stakeholder management to drive measurable business impact.[file:110]
     </p>
     <div class="grid-4">
       <div class="card-feature">
         <div class="feature-icon">BA</div>
         <div class="feature-title">Business Analysis</div>
-        <div class="feature-text">Experienced in BRD/FRD creation, user stories, process mapping, workshops, and change management across multi‑team programmes.</div>
+        <div class="feature-text">BRD/FRD authoring, user stories, BPMN, stakeholder workshops, change management, process improvement.[file:110]</div>
       </div>
       <div class="card-feature">
         <div class="feature-icon">BI</div>
-        <div class="feature-title">Enterprise BI</div>
-        <div class="feature-text">Power BI, Tableau, and Looker solutions with semantic models, RBAC/RLS, KPI design, and executive‑ready dashboards.[file:109]</div>
+        <div class="feature-title">Business Intelligence</div>
+        <div class="feature-text">Power BI (DAX, semantic models, RBAC/RLS), Tableau, Looker, KPI design, self-service analytics, executive dashboards.[file:110]</div>
       </div>
       <div class="card-feature">
-        <div class="feature-icon">⚙</div>
+        <div class="feature-icon">DE</div>
         <div class="feature-title">Data Engineering</div>
-        <div class="feature-text">Azure Synapse, Azure Data Factory, AWS, Databricks, and ETL/ELT pipelines designed for reliability and observability.[file:109]</div>
+        <div class="feature-text">Azure Synapse, Azure Data Factory, AWS (EC2, S3, RDS, Glue), Databricks, data warehouse design, ETL/ELT pipelines.[file:110]</div>
       </div>
       <div class="card-feature">
         <div class="feature-icon">Gx</div>
-        <div class="feature-title">Governance & Compliance</div>
-        <div class="feature-text">Data lineage, cataloguing, quality rules, and controls for SOX, HIPAA, AML, and SDLC, supporting clean audits and control coverage.[file:109]</div>
+        <div class="feature-title">Quality & Governance</div>
+        <div class="feature-text">Data lineage, metadata management, data cataloging, DQ rules, incident management, audit readiness.[file:110]</div>
       </div>
     </div>
   </section>
 
   <section id="experience" class="angled fade-in">
-    <div class="section-label">Career Timeline</div>
+    <div class="section-label">Professional Experience</div>
     <h2 class="section-title">Professional Experience</h2>
-    <p class="section-desc">
-      Roles spanning healthcare, financial services, consulting, and fintech, with consistent focus on analytics, governance, and delivery.[file:109]
-    </p>
+
     <div class="experience-list">
+
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Senior Business Analyst</div>
-            <div class="exp-role">CVS Health · Los Angeles, CA</div>
+            <div class="exp-title">Senior Business Analyst | CVS Health</div>
+            <div class="exp-role">Los Angeles, CA</div>
           </div>
           <div class="exp-period">Feb 2025 – Present</div>
         </div>
         <p class="exp-desc">
-          Designed and rolled out a data ingestion and reporting platform for 200+ concurrent users with role‑based Power BI dashboards and automated data quality checks, cutting reporting turnaround by 25%. Established metadata and data quality standards that reduced downstream defects by 35% while maintaining 100% SDLC and SOX compliance across 12 key controls.[file:109]
+          • Designed and rolled out data ingestion and reporting platform for 200+ concurrent users; implemented role-based Power BI dashboards and automated DQ checks, cutting reporting turnaround by 25% (3 to 2.25 days).<br>
+          • Established metadata and data quality standards at ingestion; reduced downstream data defects by 35% while maintaining 100% SDLC and SOX control compliance across 12 key controls.<br>
+          • Automated recurring manual workflows with Python (pandas) and ETL refactoring, saving 10+ hours of team effort per week and increasing sprint throughput from 45 to 58 story points.<br>
+          • Maintained incident SLAs at 99.9% uptime and reduced mean time to resolution by 35% through improved monitoring, runbooks, and root-cause analysis.[file:110]
         </p>
-        <div class="exp-skills">
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Azure Synapse</span>
-          <span class="skill-tag">Data Quality</span>
-          <span class="skill-tag">SOX</span>
-          <span class="skill-tag">Incident Analytics</span>
-        </div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Systems Business Analyst</div>
-            <div class="exp-role">DXC Technology · Remote</div>
+            <div class="exp-title">Systems Business Analyst | DXC Technology</div>
+            <div class="exp-role">Remote</div>
           </div>
           <div class="exp-period">Jun 2024 – Dec 2024</div>
         </div>
         <p class="exp-desc">
-          Led requirements and data flow design for an Azure Synapse migration, defining SLAs, data contracts, and lineage to de‑risk a multi‑million‑dollar modernisation. Built an end‑to‑end data quality framework with SQL Server DQS and Python validators, cutting issues by 35% and improving query performance by 40% while raising on‑time delivery to 97%.[file:109]
+          • Led requirements and data flow design for Azure Synapse migration, defining SLAs (99.9%), data contracts, and lineage; de-risked a multi-million-dollar modernization program.<br>
+          • Built an end-to-end data quality framework (SQL Server DQS + Python validators) that cut data issues by 35% and improved query performance by 40%.<br>
+          • Developed SLA dashboards tracking latency, throughput, failure rates, and backlog metrics; improved visibility drove on-time delivery to 97% and reduced unplanned incidents.[file:110]
         </p>
-        <div class="exp-skills">
-          <span class="skill-tag">Azure Synapse</span>
-          <span class="skill-tag">Azure Data Factory</span>
-          <span class="skill-tag">SQL Server DQS</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SLAs</span>
-        </div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Business Analyst</div>
-            <div class="exp-role">Infosys BPM · Hyderabad, India</div>
+            <div class="exp-title">Business Analyst | Infosys BPM</div>
+            <div class="exp-role">Hyderabad, India</div>
           </div>
           <div class="exp-period">Jul 2021 – Aug 2023</div>
         </div>
         <p class="exp-desc">
-          Delivered six enterprise BI dashboards in Power BI and Tableau with automated SQL refresh, eliminating 70% of manual reporting and saving 18+ hours per month while enabling 150+ daily self‑service users. Analysed 500K+ procurement records with advanced SQL to identify payment‑delay drivers, improving decision speed by 30% and forecast accuracy by 25%.[file:109]
+          • Delivered 6 enterprise BI dashboards (Power BI, Tableau) with automated SQL refresh; eliminated 70% of manual reporting and saved 18+ hours per month while enabling 150+ daily self-service users.<br>
+          • Analyzed 500K+ procurement records using advanced SQL (window functions, CTEs) to identify payment-delay drivers, improving decision speed by 30% and forecast accuracy by 25%.<br>
+          • Implemented end-to-end lineage across 8 procurement workflows using Informatica metadata; reduced traceability gaps by 40% and supported three clean audit cycles across 14 controls.[file:110]
         </p>
-        <div class="exp-skills">
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Tableau</span>
-          <span class="skill-tag">Advanced SQL</span>
-          <span class="skill-tag">Procurement Analytics</span>
-          <span class="skill-tag">Informatica</span>
-        </div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Junior Business Analyst</div>
-            <div class="exp-role">TatvaSoft · Hyderabad, India</div>
+            <div class="exp-title">Junior Business Analyst | TatvaSoft</div>
+            <div class="exp-role">Hyderabad, India</div>
           </div>
           <div class="exp-period">Jan 2020 – Jun 2021</div>
         </div>
         <p class="exp-desc">
-          Produced BRDs and FRDs for a fintech loan management system with 60+ functional requirements and API‑first microservices, supporting an on‑time launch handling 50K+ daily transactions. Optimised ETL jobs and Informatica workflows to cut runtime by 40% and maintain 99.99% transaction success while documenting BPMN processes and Jira automation to reduce change cycle time by 30%.[file:109]
+          • Produced BRDs and FRDs for fintech loan management system (60+ functional requirements, API-first microservices); supported on-time launch handling 50K+ daily transactions.<br>
+          • Optimized ETL jobs by refactoring SQL and redesigning Informatica workflows, cutting runtime by 40% (45 to 27 minutes) and sustaining 99.99% transaction success rates.<br>
+          • Documented BPMN processes and Jira automation workflows, reducing change cycle time by 30% and achieving full SDLC compliance.[file:110]
         </p>
-        <div class="exp-skills">
-          <span class="skill-tag">BRD / FRD</span>
-          <span class="skill-tag">Fintech</span>
-          <span class="skill-tag">Informatica</span>
-          <span class="skill-tag">BPMN</span>
-          <span class="skill-tag">Jira</span>
-        </div>
       </div>
+
     </div>
   </section>
 
   <section id="process" class="fade-in">
     <div class="section-label">Methodology</div>
-    <h2 class="section-title">How Projects Move from Idea to Impact</h2>
+    <h2 class="section-title">Project Delivery Approach</h2>
     <p class="section-desc">
-      Grounded in Agile and Scrum, with clear artefacts, SLAs, and controls from discovery through to production and audit support.[file:109]
+      Project Delivery: Agile/Scrum, Jira, Confluence, sprint planning, backlog refinement, sprint metrics, delivery risk mitigation.[file:110]
     </p>
     <div class="steps">
       <div class="step-card">
         <div class="step-number">01</div>
         <div class="step-title">Discover</div>
-        <div class="step-text">Run stakeholder workshops to capture BRDs, user stories, KPIs, compliance requirements, and current‑state data flows.</div>
+        <div class="step-text">BRD/FRD authoring, user stories, workshops, and process mapping to capture business needs and constraints.[file:110]</div>
       </div>
       <div class="step-card">
         <div class="step-number">02</div>
         <div class="step-title">Design</div>
-        <div class="step-text">Define target‑state architecture, semantic models, data contracts, DQ rules, and SLAs aligned to business outcomes.</div>
+        <div class="step-text">Data contracts, lineage, SLAs, and governance models designed to support SDLC controls and audits.[file:110]</div>
       </div>
       <div class="step-card">
         <div class="step-number">03</div>
         <div class="step-title">Build</div>
-        <div class="step-text">Implement ETL/ELT, dashboards, and models with version control, testing, and SDLC control evidence captured.</div>
+        <div class="step-text">ETL/ELT pipelines, dashboards, and models implemented with quality checks and evidence management.[file:110]</div>
       </div>
       <div class="step-card">
         <div class="step-number">04</div>
         <div class="step-title">Scale</div>
-        <div class="step-text">Deploy monitoring, incident playbooks, and documentation to keep uptime high and audits clean over the long term.</div>
+        <div class="step-text">SLA monitoring, incident management, and continuous improvement to keep uptime and accuracy high.[file:110]</div>
       </div>
     </div>
   </section>
 
   <section id="projects" class="angled fade-in">
-    <div class="section-label">Selected Projects</div>
-    <h2 class="section-title">Analytics & ML Case Studies</h2>
-    <p class="section-desc">
-      A closer look at three end‑to‑end projects from your resume that combine modelling, governance, and business impact.[file:109]
-    </p>
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Projects</h2>
+
     <div class="projects">
+
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">XGBoost · Healthcare</span>
-          <h3 class="project-title">Healthcare Readmission Prediction</h3>
-          <div class="project-metric">85% AUC‑PR · 200+ readmissions avoided yearly</div>
-          <p class="project-desc">Built a readmission risk model on 100K+ clinical records to flag high‑risk patients and support targeted interventions.[file:109]</p>
-          <ul class="project-list">
-            <li>Used XGBoost with feature engineering on clinical, demographic, and utilisation data.</li>
-            <li>Flagged 15% of patients as high risk, supporting an estimated 200+ readmissions prevented annually.[file:109]</li>
-            <li>Implemented HIPAA‑aligned governance with AES‑256 PHI encryption, role‑based access, and audited lineage.</li>
-            <li>Passed compliance review with zero issues and handed over clear documentation to clinical teams.[file:109]</li>
-          </ul>
+          <span class="project-tag">Machine Learning · Healthcare</span>
+          <h3 class="project-title">Healthcare Readmission Prediction (Machine Learning, Healthcare)</h3>
+          <p class="project-desc">
+            • Built XGBoost-based risk model on 100K+ clinical records achieving 85% AUC-PR; flagged 15% of patients as high risk, preventing an estimated 200+ annual readmissions.<br>
+            • Implemented HIPAA-aligned governance with AES-256 PHI encryption, role-based access, and audited lineage, passing compliance review with zero issues.[file:110]
+          </p>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-content">
           <span class="project-tag">Market Analytics · Strategy</span>
-          <h3 class="project-title">EV Adoption Market Analysis</h3>
-          <div class="project-metric">$2M market expansion approved</div>
-          <p class="project-desc">Analysed EV adoption across 2,000+ US counties, identifying drivers and prioritising high‑potential markets.[file:109]</p>
-          <ul class="project-list">
-            <li>Identified the top five demand drivers and a 35% adoption premium in tier‑1 markets.[file:109]</li>
-            <li>Summarised findings in a 12‑slide executive deck with KPIs and scenario modelling.</li>
-            <li>Provided recommendations that supported approval of a $2M expansion plan.</li>
-            <li>Linked analytics directly to capital allocation and go‑to‑market strategy decisions.</li>
-          </ul>
+          <h3 class="project-title">EV Adoption Market Analysis (Market Analytics, Strategy)</h3>
+          <p class="project-desc">
+            • Analyzed EV adoption across 2,000+ US counties; identified top 5 demand drivers and a 35% adoption premium in tier-1 markets.<br>
+            • Created a 12-slide executive deck with KPIs and scenario modeling that supported approval of a $2M market expansion plan.[file:110]
+          </p>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">Time‑Series · Manufacturing</span>
-          <h3 class="project-title">Predictive Maintenance for Manufacturing</h3>
-          <div class="project-metric">$500K+ annual savings</div>
-          <p class="project-desc">Developed a time‑series model on 10M+ sensor readings to predict failures 14 days in advance with 92% precision.[file:109]</p>
-          <ul class="project-list">
-            <li>Reduced unplanned downtime by 22% for critical equipment fleets.[file:109]</li>
-            <li>Documented a full model card and escalation runbook for operations ownership.</li>
-            <li>Implemented monitoring for drift, performance, and coverage metrics.</li>
-            <li>Unlocked $500K+ annual savings and made maintenance planning proactive.[file:109]</li>
-          </ul>
+          <span class="project-tag">Time-Series Analytics</span>
+          <h3 class="project-title">Predictive Maintenance for Manufacturing (Time-Series Analytics)</h3>
+          <p class="project-desc">
+            • Developed a time-series model on 10M+ sensor readings to predict failures 14 days in advance with 92% precision, reducing unplanned downtime by 22%.<br>
+            • Documented a full model card (assumptions, monitoring, escalation) and runbook, enabling operations to own the solution and unlocking $500K+ annual savings.[file:110]
+          </p>
         </div>
       </div>
+
     </div>
   </section>
 
   <section id="skills" class="fade-in">
-    <div class="section-label">Technical Arsenal</div>
-    <h2 class="section-title">Skills & Tools</h2>
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">Technical Skills</h2>
     <p class="section-desc">
-      The analytics, engineering, and governance stack used most frequently across recent roles and projects.[file:109]
+      Directly reflecting the skills matrix from the resume across analytics, Python, cloud, tools, and governance.[file:110]
     </p>
     <div class="skills-container">
       <div class="skill-category">
@@ -1452,63 +1334,56 @@
           <span class="skill-item">Tableau</span>
           <span class="skill-item">Looker</span>
           <span class="skill-item">SQL Server</span>
-          <span class="skill-item">PostgreSQL</span>
+          <span class="skill-item">PostgreSQL</span>[file:110]
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Python & ML</div>
+        <div class="skill-cat-title">Python</div>
         <div class="skill-list">
-          <span class="skill-item">Python (pandas, NumPy)</span>
-          <span class="skill-item">scikit‑learn</span>
+          <span class="skill-item">pandas</span>
+          <span class="skill-item">NumPy</span>
+          <span class="skill-item">scikit-learn</span>
           <span class="skill-item">XGBoost</span>
           <span class="skill-item">Matplotlib</span>
-          <span class="skill-item">Seaborn</span>
+          <span class="skill-item">Seaborn</span>[file:110]
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Cloud & Data</div>
+        <div class="skill-cat-title">Cloud</div>
         <div class="skill-list">
           <span class="skill-item">Azure Synapse</span>
           <span class="skill-item">Azure Data Factory</span>
           <span class="skill-item">AWS (EC2, S3, RDS, Glue)</span>
-          <span class="skill-item">Databricks</span>
-          <span class="skill-item">Data Warehouse Design</span>
+          <span class="skill-item">Databricks</span>[file:110]
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title">Tools</div>
+        <div class="skill-list">
+          <span class="skill-item">Jira</span>
+          <span class="skill-item">Confluence</span>
+          <span class="skill-item">Azure DevOps</span>
+          <span class="skill-item">BPMN</span>
+          <span class="skill-item">Visio</span>
+          <span class="skill-item">Informatica</span>
+          <span class="skill-item">Collibra</span>
+          <span class="skill-item">Git</span>[file:110]
         </div>
       </div>
 
       <div class="skill-category">
         <div class="skill-cat-title">Governance</div>
         <div class="skill-list">
-          <span class="skill-item">Data lineage & catalogues</span>
+          <span class="skill-item">Data lineage</span>
+          <span class="skill-item">Data catalog</span>
           <span class="skill-item">Metadata standards</span>
-          <span class="skill-item">SOX · HIPAA · AML</span>
-          <span class="skill-item">Data quality rules</span>
-          <span class="skill-item">Audit readiness</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-cat-title">Delivery & Tools</div>
-        <div class="skill-list">
-          <span class="skill-item">Agile / Scrum</span>
-          <span class="skill-item">Jira · Confluence</span>
-          <span class="skill-item">Azure DevOps</span>
-          <span class="skill-item">BPMN · Visio</span>
-          <span class="skill-item">Informatica · Collibra</span>
-          <span class="skill-item">Git</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-cat-title">Core Strengths</div>
-        <div class="skill-list">
-          <span class="skill-item">Requirements & stakeholder management</span>
-          <span class="skill-item">Incident analytics</span>
-          <span class="skill-item">Regulatory compliance</span>
-          <span class="skill-item">Sprint metrics & risk mitigation</span>
-          <span class="skill-item">Executive communication</span>
+          <span class="skill-item">SOX</span>
+          <span class="skill-item">HIPAA</span>
+          <span class="skill-item">AML</span>
+          <span class="skill-item">SDLC</span>[file:110]
         </div>
       </div>
     </div>
@@ -1518,19 +1393,19 @@
     <div class="section-label">Background</div>
     <h2 class="section-title">Education & Certifications</h2>
     <p class="section-desc">
-      Formal training in business analytics, commerce, and continuous upskilling through industry certifications.[file:109]
+      Education and certifications taken verbatim from the resume for accuracy.[file:110]
     </p>
 
     <div class="education-grid">
       <div class="edu-card">
-        <div class="edu-title">Master of Business Analytics</div>
-        <div class="edu-meta">Sacred Heart University · Fairfield, CT · May 2024</div>
-        <div class="edu-detail">GPA: 3.7 / 4.0 · Coursework in Data Strategy, BI Systems, Predictive Analytics, Data Governance, Advanced SQL, and Python.[file:109]</div>
+        <div class="edu-title">Master of Business Analytics | Sacred Heart University, Fairfield, CT</div>
+        <div class="edu-meta">May 2024</div>
+        <div class="edu-detail">GPA: 3.7/4.0 | Coursework: Data Strategy, BI Systems, Predictive Analytics, Data Governance, Advanced SQL, Python.[file:110]</div>
       </div>
       <div class="edu-card">
-        <div class="edu-title">Bachelor of Commerce in Computer Applications</div>
-        <div class="edu-meta">Jagruthi Degree & PG College · Hyderabad, India · Jun 2021</div>
-        <div class="edu-detail">GPA: 3.0 / 4.0 · Foundation in commerce, computing, and applied business technology.[file:109]</div>
+        <div class="edu-title">Bachelor of Commerce in Computer Applications | Jagruthi Degree & PG College, Hyderabad, India</div>
+        <div class="edu-meta">Jun 2021</div>
+        <div class="edu-detail">GPA: 3.0/4.0.[file:110]</div>
       </div>
     </div>
 
@@ -1538,23 +1413,23 @@
     <div class="certifications">
       <div class="cert-badge">
         <div class="cert-icon">📊</div>
-        <div class="cert-title">Power BI Data Analyst Associate (PL‑300)</div>
-        <div class="cert-issuer">Microsoft · 2024[file:109]</div>
+        <div class="cert-title">Microsoft Certified: Power BI Data Analyst Associate (PL-300), 2024</div>
+        <div class="cert-issuer">[file:110]</div>
       </div>
       <div class="cert-badge">
         <div class="cert-icon">📝</div>
-        <div class="cert-title">Business Analysis: Essential Tools & Techniques</div>
-        <div class="cert-issuer">IIBA‑aligned · 2023[file:109]</div>
+        <div class="cert-title">Business Analysis: Essential Tools and Techniques (IIBA-aligned), 2023</div>
+        <div class="cert-issuer">[file:110]</div>
       </div>
       <div class="cert-badge">
         <div class="cert-icon">⚡</div>
-        <div class="cert-title">Agile and Scrum Framework</div>
-        <div class="cert-issuer">Certification · 2022[file:109]</div>
+        <div class="cert-title">Agile and Scrum Framework Certification, 2022</div>
+        <div class="cert-issuer">[file:110]</div>
       </div>
       <div class="cert-badge">
         <div class="cert-icon">📈</div>
-        <div class="cert-title">Google Data Analytics</div>
-        <div class="cert-issuer">Professional Certificate (in progress, expected 2026)[file:109]</div>
+        <div class="cert-title">Google Data Analytics Professional Certificate (in progress, expected 2026)</div>
+        <div class="cert-issuer">[file:110]</div>
       </div>
     </div>
   </section>
@@ -1563,7 +1438,7 @@
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let’s Talk About Your Data</h2>
     <p class="section-desc">
-      Share your use case, data landscape, and timelines. A concise response with options and next steps will follow quickly.[file:109]
+      Los Angeles, CA | (203) 994-4997 | hrushisingh697@gmail.com | LinkedIn.[file:110]
     </p>
     <div class="contact-box">
       <form id="contact-form" onsubmit="handleFormSubmit(event)">
@@ -1599,18 +1474,11 @@
           <div class="contact-icon" onclick="openLink('https://linkedin.com')">in</div>
           <div class="contact-content">
             <div class="contact-label">LinkedIn</div>
-            <div class="contact-value" onclick="openLink('https://linkedin.com')">LinkedIn profile on request</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon" onclick="openLink('https://github.com')">GH</div>
-          <div class="contact-content">
-            <div class="contact-label">GitHub</div>
-            <div class="contact-value" onclick="openLink('https://github.com')">GitHub portfolio on request</div>
+            <div class="contact-value" onclick="openLink('https://linkedin.com')">LinkedIn profile</div>
           </div>
         </div>
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-top:16px;border-top:1px solid rgba(212,175,55,0.22);padding-top:16px;">
-          Los Angeles, CA · Open to remote and hybrid roles across the US. Available for full‑time roles and selective consulting engagements.[file:109]
+          Open to remote and hybrid roles across the US, and selective consulting engagements.[file:110]
         </p>
       </div>
     </div>
