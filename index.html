@@ -7,27 +7,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <style>
     :root{
-      --bg:#0a0e1f;
+      --bg:#050814;
       --accent:#d4af37;
       --accent-light:#e8c547;
       --accent-bright:#ffd700;
       --text:#f5f5f5;
       --muted:#8a92a8;
-      --card:#0f1529;
-      --grid:#1a2847;
+      --card:#0b1022;
+      --grid:#141c33;
       --radius:16px;
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
     html,body{
       scroll-behavior:smooth;
-      background:#0a0e1f;
+      background:var(--bg);
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       overflow-x:hidden;
     }
 
-    /* MULTI-LAYERED ANIMATED BACKGROUND - SOFTENED */
+    /* DATA / ANALYTICS THEMED BACKGROUND */
     body::before{
       content:"";
       position:fixed;
@@ -37,10 +37,10 @@
         linear-gradient(rgba(212,175,55,0.03) 1px,transparent 1px);
       background-size:60px 60px;
       mix-blend-mode:screen;
-      opacity:0.25;
+      opacity:0.22;
       pointer-events:none;
-      z-index:-5;
-      animation:gridShift 20s linear infinite;
+      z-index:-6;
+      animation:gridShift 22s linear infinite;
     }
     @keyframes gridShift{
       0%{transform:translate(0,0);}
@@ -52,87 +52,88 @@
       position:fixed;
       inset:0;
       background:
-        radial-gradient(circle at 20% 0%,rgba(212,175,55,0.18) 0,transparent 35%),
-        radial-gradient(circle at 80% 20%,rgba(212,175,55,0.14) 0,transparent 45%),
-        radial-gradient(circle at 50% 100%,rgba(212,175,55,0.2) 0,transparent 45%),
-        radial-gradient(circle at 10% 80%,rgba(212,175,55,0.12) 0,transparent 40%);
+        radial-gradient(circle at 20% 5%,rgba(212,175,55,0.18) 0,transparent 40%),
+        radial-gradient(circle at 80% 15%,rgba(212,175,55,0.14) 0,transparent 50%),
+        radial-gradient(circle at 15% 80%,rgba(212,175,55,0.14) 0,transparent 45%),
+        radial-gradient(circle at 70% 90%,rgba(212,175,55,0.18) 0,transparent 50%);
       mix-blend-mode:screen;
-      opacity:0.5;
+      opacity:0.55;
       pointer-events:none;
-      z-index:-4;
-      animation:glowPulse 8s ease-in-out infinite;
+      z-index:-5;
+      animation:glowPulse 9s ease-in-out infinite;
     }
     @keyframes glowPulse{
       0%,100%{opacity:0.4;}
-      50%{opacity:0.7;}
+      50%{opacity:0.75;}
     }
 
+    /* 3D RIBBONS + DATA WAVES */
     .mesh-container{
       position:fixed;
       inset:0;
       pointer-events:none;
-      z-index:-3;
+      z-index:-4;
       overflow:hidden;
     }
     .mesh-ribbon{
       position:absolute;
-      width:200%;
+      width:220%;
       height:220px;
       mix-blend-mode:screen;
-      filter:blur(0.5px);
-      opacity:0.2;
+      filter:blur(0.6px);
+      opacity:0.22;
     }
     .mesh-1{
-      top:5%;
-      left:-40%;
+      top:3%;
+      left:-50%;
       background:linear-gradient(90deg,
         rgba(212,175,55,0) 0%,
-        rgba(212,175,55,0.45) 15%,
-        rgba(212,175,55,0.55) 50%,
-        rgba(212,175,55,0.35) 85%,
+        rgba(212,175,55,0.45) 18%,
+        rgba(212,175,55,0.6) 50%,
+        rgba(212,175,55,0.35) 82%,
         rgba(212,175,55,0) 100%);
-      clip-path:polygon(0 25%,100% 0,100% 75%,0 100%);
-      animation:ribbon1 12s ease-in-out infinite;
+      clip-path:polygon(0 30%,100% 0,100% 70%,0 100%);
+      animation:ribbon1 16s ease-in-out infinite;
     }
     .mesh-2{
-      top:25%;
-      right:-45%;
+      top:28%;
+      right:-55%;
       background:linear-gradient(270deg,
         rgba(212,175,55,0) 0%,
         rgba(212,175,55,0.4) 25%,
-        rgba(212,175,55,0.5) 50%,
-        rgba(212,175,55,0.3) 75%,
+        rgba(212,175,55,0.55) 52%,
+        rgba(212,175,55,0.3) 80%,
         rgba(212,175,55,0) 100%);
       clip-path:polygon(0 15%,100% 35%,100% 85%,0 65%);
-      animation:ribbon2 14s ease-in-out infinite;
+      animation:ribbon2 18s ease-in-out infinite;
     }
     .mesh-3{
-      top:45%;
-      left:-35%;
+      top:52%;
+      left:-45%;
       background:linear-gradient(45deg,
         rgba(212,175,55,0) 0%,
         rgba(212,175,55,0.42) 20%,
-        rgba(212,175,55,0.52) 50%,
+        rgba(212,175,55,0.55) 50%,
         rgba(212,175,55,0.32) 80%,
         rgba(212,175,55,0) 100%);
       clip-path:polygon(0 35%,100% 15%,100% 85%,0 65%);
-      animation:ribbon3 16s ease-in-out infinite;
+      animation:ribbon3 20s ease-in-out infinite;
     }
     .mesh-4{
-      bottom:15%;
-      right:-40%;
+      bottom:12%;
+      right:-50%;
       background:linear-gradient(135deg,
         rgba(212,175,55,0) 0%,
         rgba(212,175,55,0.38) 22%,
-        rgba(212,175,55,0.48) 50%,
+        rgba(212,175,55,0.5) 50%,
         rgba(212,175,55,0.28) 78%,
         rgba(212,175,55,0) 100%);
       clip-path:polygon(0 40%,100% 25%,100% 75%,0 60%);
-      animation:ribbon4 18s ease-in-out infinite;
+      animation:ribbon4 22s ease-in-out infinite;
     }
     .mesh-5{
-      bottom:2%;
-      left:-30%;
+      bottom:0%;
+      left:-35%;
       background:linear-gradient(to right,
         rgba(212,175,55,0) 0%,
         rgba(212,175,55,0.35) 18%,
@@ -140,173 +141,169 @@
         rgba(212,175,55,0.25) 82%,
         rgba(212,175,55,0) 100%);
       clip-path:polygon(0 30%,100% 20%,100% 80%,0 70%);
-      animation:ribbon5 20s ease-in-out infinite;
-    }
-    .mesh-6{
-      top:15%;
-      left:-50%;
-      width:180%;
-      height:280px;
-      background:radial-gradient(ellipse at 30% 50%,rgba(212,175,55,0.25) 0,transparent 60%);
-      clip-path:polygon(0 40%,100% 30%,100% 70%,0 60%);
-      animation:mesh6Flow 24s ease-in-out infinite;
-      opacity:0.18;
-    }
-    .mesh-7{
-      top:60%;
-      right:-45%;
-      width:200%;
-      height:250px;
-      background:linear-gradient(90deg,
-        transparent 0%,
-        rgba(212,175,55,0.3) 20%,
-        rgba(212,175,55,0.4) 50%,
-        rgba(212,175,55,0.2) 80%,
-        transparent 100%);
-      clip-path:polygon(0 35%,100% 25%,100% 75%,0 65%);
-      animation:mesh7Flow 26s ease-in-out infinite;
-      opacity:0.18;
-    }
-    .mesh-8{
-      top:20%;
-      left:10%;
-      width:500px;
-      height:400px;
-      background:radial-gradient(circle at 35% 35%,rgba(212,175,55,0.32) 0,transparent 65%);
-      border-radius:50%;
-      animation:floatBlob1 22s ease-in-out infinite;
-      opacity:0.18;
-      filter:blur(40px);
-    }
-    .mesh-9{
-      bottom:10%;
-      right:5%;
-      width:450px;
-      height:450px;
-      background:radial-gradient(circle at 60% 60%,rgba(212,175,55,0.28) 0,transparent 60%);
-      border-radius:50%;
-      animation:floatBlob2 24s ease-in-out infinite;
-      opacity:0.18;
-      filter:blur(50px);
-    }
-    .mesh-10{
-      top:50%;
-      right:20%;
-      width:350px;
-      height:350px;
-      background:radial-gradient(circle at 40% 40%,rgba(212,175,55,0.25) 0,transparent 70%);
-      border-radius:50%;
-      animation:floatBlob3 28s ease-in-out infinite;
-      opacity:0.18;
-      filter:blur(45px);
+      animation:ribbon5 24s ease-in-out infinite;
     }
 
+    /* 3D DATA WAVE BANDS (like timelines / line charts) */
+    .data-wave{
+      position:absolute;
+      width:220%;
+      height:160px;
+      opacity:0.22;
+      mix-blend-mode:screen;
+      background:
+        radial-gradient(circle at 10% 30%,rgba(212,175,55,0.4) 0,transparent 55%),
+        radial-gradient(circle at 45% 70%,rgba(232,197,71,0.45) 0,transparent 55%),
+        radial-gradient(circle at 85% 40%,rgba(212,175,55,0.35) 0,transparent 55%);
+      filter:blur(1px);
+    }
+    .data-wave-1{
+      top:18%;
+      left:-60%;
+      clip-path:polygon(0 55%,10% 50%,22% 60%,35% 45%,50% 58%,65% 40%,80% 55%,100% 48%,100% 100%,0 100%);
+      animation:dataWave1 26s ease-in-out infinite;
+    }
+    .data-wave-2{
+      top:62%;
+      right:-60%;
+      clip-path:polygon(0 50%,15% 60%,30% 42%,48% 62%,63% 47%,80% 65%,100% 52%,100% 100%,0 100%);
+      animation:dataWave2 28s ease-in-out infinite;
+    }
+
+    /* FLOATING 3D NODES / POINTS (like scatter / network) */
+    .data-node{
+      position:absolute;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 14px rgba(212,175,55,0.9);
+      opacity:0.7;
+    }
+    .data-node-ring{
+      position:absolute;
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      border:1px solid rgba(212,175,55,0.35);
+      box-shadow:0 0 18px rgba(212,175,55,0.45);
+      opacity:0.35;
+    }
+    .nodes-layer{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-3;
+    }
+
+    /* ANALYTICS GRID CLUSTERS (like heatmaps) */
+    .cluster-grid{
+      position:absolute;
+      display:grid;
+      grid-template-columns:repeat(6,10px);
+      grid-auto-rows:10px;
+      gap:6px;
+      opacity:0.18;
+      mix-blend-mode:screen;
+    }
+    .cluster-cell{
+      width:10px;
+      height:10px;
+      border-radius:2px;
+      background:rgba(212,175,55,0.35);
+      box-shadow:0 0 8px rgba(212,175,55,0.5);
+    }
+    .cluster-1{top:12%;right:6%;}
+    .cluster-2{top:46%;left:4%;}
+    .cluster-3{bottom:14%;right:20%;}
+
+    /* WIREFRAMES (cubes / hex / charts) */
     .wireframe-pattern{
       position:absolute;
       mix-blend-mode:screen;
-      opacity:0.08;
+      opacity:0.1;
     }
     .wireframe-1{
       top:10%;
-      left:15%;
-      width:300px;
-      height:300px;
-      border:1px solid rgba(212,175,55,0.3);
+      left:16%;
+      width:280px;
+      height:280px;
+      border:1px solid rgba(212,175,55,0.35);
       clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-      animation:wireframeRotate 30s linear infinite;
+      animation:wireframeRotate 34s linear infinite;
     }
     .wireframe-2{
-      top:40%;
+      top:38%;
       right:10%;
-      width:250px;
-      height:250px;
-      border:1px dashed rgba(212,175,55,0.25);
+      width:230px;
+      height:230px;
+      border:1px dashed rgba(212,175,55,0.28);
       border-radius:50%;
-      animation:wireframeRotate 35s linear infinite reverse;
+      animation:wireframeRotate 36s linear infinite reverse;
     }
     .wireframe-3{
       bottom:20%;
-      left:5%;
-      width:280px;
-      height:280px;
-      border:1px dotted rgba(212,175,55,0.2);
+      left:8%;
+      width:260px;
+      height:260px;
+      border:1px dotted rgba(212,175,55,0.24);
       clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
       animation:wireframeRotate 40s linear infinite;
     }
     .wireframe-4{
-      top:70%;
-      right:25%;
-      width:220px;
-      height:220px;
-      border:1px solid rgba(212,175,55,0.22);
+      top:72%;
+      right:23%;
+      width:210px;
+      height:210px;
+      border:1px solid rgba(212,175,55,0.26);
       animation:wireframeRotate 32s linear infinite reverse;
     }
 
+    /* BACKGROUND ANIMATIONS */
     @keyframes ribbon1{
-      0%{transform:translate3d(0,0,0) rotate(-8deg) scaleX(1.3);}
-      25%{transform:translate3d(40px,-50px,0) rotate(-4deg) scaleX(1.5);}
-      50%{transform:translate3d(-30px,-100px,0) rotate(-12deg) scaleX(1.4);}
-      75%{transform:translate3d(60px,-40px,0) rotate(-6deg) scaleX(1.6);}
-      100%{transform:translate3d(0,0,0) rotate(-8deg) scaleX(1.3);}
+      0%{transform:translate3d(0,0,0) rotate(-10deg) scaleX(1.3);}
+      25%{transform:translate3d(40px,-50px,0) rotate(-5deg) scaleX(1.5);}
+      50%{transform:translate3d(-30px,-110px,0) rotate(-13deg) scaleX(1.4);}
+      75%{transform:translate3d(60px,-40px,0) rotate(-7deg) scaleX(1.6);}
+      100%{transform:translate3d(0,0,0) rotate(-10deg) scaleX(1.3);}
     }
     @keyframes ribbon2{
-      0%{transform:translate3d(0,0,0) rotate(8deg) scaleX(1.2);}
-      25%{transform:translate3d(-50px,60px,0) rotate(11deg) scaleX(1.4);}
-      50%{transform:translate3d(40px,30px,0) rotate(5deg) scaleX(1.6);}
-      75%{transform:translate3d(-40px,80px,0) rotate(10deg) scaleX(1.3);}
-      100%{transform:translate3d(0,0,0) rotate(8deg) scaleX(1.2);}
+      0%{transform:translate3d(0,0,0) rotate(9deg) scaleX(1.2);}
+      25%{transform:translate3d(-55px,65px,0) rotate(12deg) scaleX(1.4);}
+      50%{transform:translate3d(40px,30px,0) rotate(6deg) scaleX(1.6);}
+      75%{transform:translate3d(-45px,85px,0) rotate(11deg) scaleX(1.3);}
+      100%{transform:translate3d(0,0,0) rotate(9deg) scaleX(1.2);}
     }
     @keyframes ribbon3{
-      0%{transform:translate3d(0,0,0) rotate(-14deg) scaleX(1.4);}
-      25%{transform:translate3d(60px,50px,0) rotate(-10deg) scaleX(1.6);}
-      50%{transform:translate3d(-40px,90px,0) rotate(-18deg) scaleX(1.5);}
-      75%{transform:translate3d(50px,40px,0) rotate(-12deg) scaleX(1.7);}
-      100%{transform:translate3d(0,0,0) rotate(-14deg) scaleX(1.4);}
+      0%{transform:translate3d(0,0,0) rotate(-15deg) scaleX(1.4);}
+      25%{transform:translate3d(65px,55px,0) rotate(-11deg) scaleX(1.6);}
+      50%{transform:translate3d(-45px,95px,0) rotate(-19deg) scaleX(1.5);}
+      75%{transform:translate3d(55px,40px,0) rotate(-13deg) scaleX(1.7);}
+      100%{transform:translate3d(0,0,0) rotate(-15deg) scaleX(1.4);}
     }
     @keyframes ribbon4{
-      0%{transform:translate3d(0,0,0) rotate(12deg) scaleX(1.35);}
-      25%{transform:translate3d(-60px,-50px,0) rotate(15deg) scaleX(1.5);}
-      50%{transform:translate3d(50px,-80px,0) rotate(8deg) scaleX(1.55);}
-      75%{transform:translate3d(-45px,-60px,0) rotate(14deg) scaleX(1.45);}
-      100%{transform:translate3d(0,0,0) rotate(12deg) scaleX(1.35);}
+      0%{transform:translate3d(0,0,0) rotate(12deg) scaleX(1.3);}
+      25%{transform:translate3d(-60px,-55px,0) rotate(15deg) scaleX(1.5);}
+      50%{transform:translate3d(55px,-85px,0) rotate(8deg) scaleX(1.55);}
+      75%{transform:translate3d(-45px,-65px,0) rotate(14deg) scaleX(1.45);}
+      100%{transform:translate3d(0,0,0) rotate(12deg) scaleX(1.3);}
     }
     @keyframes ribbon5{
-      0%{transform:translate3d(0,0,0) rotate(-10deg) scaleX(1.25);}
-      25%{transform:translate3d(45px,-70px,0) rotate(-6deg) scaleX(1.4);}
-      50%{transform:translate3d(-50px,-100px,0) rotate(-14deg) scaleX(1.5);}
-      75%{transform:translate3d(70px,-50px,0) rotate(-8deg) scaleX(1.35);}
-      100%{transform:translate3d(0,0,0) rotate(-10deg) scaleX(1.25);}
+      0%{transform:translate3d(0,0,0) rotate(-11deg) scaleX(1.25);}
+      25%{transform:translate3d(45px,-70px,0) rotate(-7deg) scaleX(1.4);}
+      50%{transform:translate3d(-55px,-105px,0) rotate(-15deg) scaleX(1.5);}
+      75%{transform:translate3d(70px,-50px,0) rotate(-9deg) scaleX(1.35);}
+      100%{transform:translate3d(0,0,0) rotate(-11deg) scaleX(1.25);}
     }
-    @keyframes mesh6Flow{
+    @keyframes dataWave1{
       0%{transform:translate3d(0,0,0) scaleY(1);}
-      50%{transform:translate3d(50px,-80px,0) scaleY(1.2);}
+      50%{transform:translate3d(60px,-40px,0) scaleY(1.15);}
       100%{transform:translate3d(0,0,0) scaleY(1);}
     }
-    @keyframes mesh7Flow{
-      0%{transform:translate3d(0,0,0) scaleX(1);}
-      50%{transform:translate3d(-60px,60px,0) scaleX(1.15);}
-      100%{transform:translate3d(0,0,0) scaleX(1);}
-    }
-    @keyframes floatBlob1{
-      0%{transform:translate3d(0,0,0) scale(1);}
-      25%{transform:translate3d(-40px,-70px,0) scale(1.15);}
-      50%{transform:translate3d(30px,-120px,0) scale(0.9);}
-      75%{transform:translate3d(-50px,-80px,0) scale(1.1);}
-      100%{transform:translate3d(0,0,0) scale(1);}
-    }
-    @keyframes floatBlob2{
-      0%{transform:translate3d(0,0,0) scale(1.05);}
-      25%{transform:translate3d(50px,80px,0) scale(0.95);}
-      50%{transform:translate3d(-60px,100px,0) scale(1.15);}
-      75%{transform:translate3d(40px,90px,0) scale(0.98);}
-      100%{transform:translate3d(0,0,0) scale(1.05);}
-    }
-    @keyframes floatBlob3{
-      0%{transform:translate3d(0,0,0) scale(1.02);}
-      25%{transform:translate3d(-80px,-60px,0) scale(1.1);}
-      50%{transform:translate3d(70px,-100px,0) scale(0.92);}
-      75%{transform:translate3d(-90px,-70px,0) scale(1.08);}
-      100%{transform:translate3d(0,0,0) scale(1.02);}
+    @keyframes dataWave2{
+      0%{transform:translate3d(0,0,0) scaleY(1);}
+      50%{transform:translate3d(-70px,40px,0) scaleY(1.12);}
+      100%{transform:translate3d(0,0,0) scaleY(1);}
     }
     @keyframes wireframeRotate{
       0%{transform:rotate(0deg);}
@@ -325,7 +322,7 @@
       height:3px;
       background:var(--accent);
       border-radius:50%;
-      opacity:0.6;
+      opacity:0.55;
       box-shadow:0 0 10px rgba(212,175,55,0.8);
     }
 
@@ -333,7 +330,7 @@
       position:fixed;
       inset:-20px;
       pointer-events:none;
-      opacity:0.04;
+      opacity:0.05;
       background-image:url("https://grainy-gradients.vercel.app/noise.svg");
       mix-blend-mode:overlay;
       z-index:1;
@@ -347,8 +344,8 @@
       align-items:center;
       justify-content:space-between;
       backdrop-filter:blur(20px);
-      background:linear-gradient(to bottom,rgba(10,14,31,0.98),rgba(10,14,31,0.85),transparent);
-      border-bottom:1px solid rgba(212,175,55,0.2);
+      background:linear-gradient(to bottom,rgba(5,8,20,0.98),rgba(5,8,20,0.88),transparent);
+      border-bottom:1px solid rgba(212,175,55,0.22);
       z-index:40;
     }
     .logo{
@@ -361,17 +358,17 @@
       border-radius:8px;
       background:linear-gradient(135deg,#d4af37,#e8c547);
       display:flex;align-items:center;justify-content:center;
-      box-shadow:0 0 24px rgba(212,175,55,0.6);
+      box-shadow:0 0 24px rgba(212,175,55,0.8);
       animation:logoGlow 3s ease-in-out infinite;
     }
     .logo-mark span{
       font-weight:900;
-      color:#0a0e1f;
+      color:#050814;
       font-size:1.2rem;
     }
     @keyframes logoGlow{
-      0%,100%{box-shadow:0 0 24px rgba(212,175,55,0.6);}
-      50%{box-shadow:0 0 40px rgba(212,175,55,0.9),inset 0 0 20px rgba(212,175,55,0.3);}
+      0%,100%{box-shadow:0 0 24px rgba(212,175,55,0.7);}
+      50%{box-shadow:0 0 40px rgba(212,175,55,0.95),inset 0 0 20px rgba(212,175,55,0.4);}
     }
     .logo-text{
       font-weight:700;
@@ -420,17 +417,17 @@
       text-transform:uppercase;
       letter-spacing:0.08em;
       font-weight:700;
-      color:#0a0e1f;
+      color:#050814;
       background:linear-gradient(135deg,#d4af37,#e8c547);
-      box-shadow:0 8px 24px rgba(212,175,55,0.4);
+      box-shadow:0 8px 24px rgba(212,175,55,0.6);
       transition:all 0.3s ease;
       text-decoration:none;
       display:inline-block;
     }
     .btn-header:hover{
       transform:translateY(-2px);
-      box-shadow:0 12px 40px rgba(212,175,55,0.6);
-      filter:brightness(1.1);
+      box-shadow:0 12px 40px rgba(212,175,55,0.9);
+      filter:brightness(1.05);
     }
 
     main{padding-top:90px;}
@@ -503,7 +500,7 @@
       padding:14px 32px;
       border:none;
       background:linear-gradient(135deg,#d4af37,#e8c547);
-      color:#0a0e1f;
+      color:#050814;
       text-transform:uppercase;
       font-size:0.75rem;
       letter-spacing:0.08em;
@@ -512,11 +509,11 @@
       transition:all 0.3s ease;
       text-decoration:none;
       display:inline-block;
-      box-shadow:0 10px 30px rgba(212,175,55,0.4);
+      box-shadow:0 10px 30px rgba(212,175,55,0.6);
     }
     .btn-primary:hover{
       transform:translateY(-3px);
-      box-shadow:0 15px 50px rgba(212,175,55,0.6);
+      box-shadow:0 15px 50px rgba(212,175,55,1);
     }
     .btn-ghost{
       border-radius:8px;
@@ -534,8 +531,8 @@
       display:inline-block;
     }
     .btn-ghost:hover{
-      background:rgba(212,175,55,0.08);
-      box-shadow:0 0 20px rgba(212,175,55,0.3);
+      background:rgba(212,175,55,0.1);
+      box-shadow:0 0 20px rgba(212,175,55,0.45);
     }
 
     .hero-visual{
@@ -552,21 +549,21 @@
       opacity:0.6;
     }
     .shape-1{
-      border:2px solid rgba(212,175,55,0.3);
+      border:2px solid rgba(212,175,55,0.35);
       clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
       animation:shapeRotate1 20s linear infinite;
     }
     .shape-2{
-      border:1.5px solid rgba(212,175,55,0.2);
+      border:1.5px solid rgba(212,175,55,0.22);
       transform:scale(0.7);
       clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
-      animation:shapeRotate2 25s linear infinite reverse;
+      animation:shapeRotate2 26s linear infinite reverse;
     }
     .shape-3{
-      border:1px dashed rgba(212,175,55,0.15);
+      border:1px dashed rgba(212,175,55,0.2);
       border-radius:50%;
       transform:scale(0.5);
-      animation:shapeRotate1 30s linear infinite reverse;
+      animation:shapeRotate1 32s linear infinite reverse;
     }
     @keyframes shapeRotate1{
       0%{transform:rotate(0deg);}
@@ -600,7 +597,7 @@
     }
 
     .angled{
-      background:linear-gradient(160deg,rgba(15,21,41,0.95) 0,rgba(10,14,31,0.98) 100%);
+      background:linear-gradient(160deg,rgba(10,16,40,0.96) 0,rgba(5,8,20,0.99) 100%);
       clip-path:polygon(0 5%,100% 0,100% 95%,0 100%);
       border-top:1px solid rgba(212,175,55,0.15);
       border-bottom:1px solid rgba(212,175,55,0.15);
@@ -624,14 +621,14 @@
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at top right,rgba(212,175,55,0.1),transparent);
+      background:radial-gradient(circle at top right,rgba(212,175,55,0.12),transparent);
       opacity:0;
       transition:opacity 0.3s ease;
     }
     .card-feature:hover{
-      border-color:rgba(212,175,55,0.4);
+      border-color:rgba(212,175,55,0.45);
       transform:translateY(-8px);
-      box-shadow:0 20px 40px rgba(212,175,55,0.15);
+      box-shadow:0 20px 40px rgba(212,175,55,0.2);
     }
     .card-feature:hover::before{
       opacity:1;
@@ -661,7 +658,7 @@
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:32px;
-      margin-bottom:48px;
+      margin-bottom:24px;
     }
     .achievement-card{
       background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));
@@ -675,12 +672,12 @@
     .achievement-card:hover{
       border-color:var(--accent);
       transform:translateY(-10px);
-      box-shadow:0 25px 50px rgba(212,175,55,0.2);
+      box-shadow:0 25px 50px rgba(212,175,55,0.25);
     }
     .achievement-badge{
       display:inline-block;
       background:linear-gradient(135deg,#d4af37,#e8c547);
-      color:#0a0e1f;
+      color:#050814;
       padding:8px 16px;
       border-radius:999px;
       font-size:0.7rem;
@@ -708,32 +705,6 @@
       line-height:1.6;
     }
 
-    .chart-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:32px;
-      margin-bottom:48px;
-    }
-    .chart-container{
-      background:linear-gradient(135deg,rgba(212,175,55,0.06),rgba(212,175,55,0.02));
-      border:1px solid rgba(212,175,55,0.2);
-      border-radius:var(--radius);
-      padding:32px;
-      position:relative;
-    }
-    .chart-title{
-      font-size:1.1rem;
-      font-weight:700;
-      margin-bottom:24px;
-      color:var(--text);
-      padding-bottom:12px;
-      border-bottom:1px solid rgba(212,175,55,0.2);
-    }
-    .chart-wrapper{
-      position:relative;
-      height:350px;
-    }
-
     .experience-list{
       display:grid;
       gap:32px;
@@ -748,7 +719,7 @@
     .exp-item:hover{
       border-color:var(--accent);
       transform:translateX(8px);
-      box-shadow:0 15px 40px rgba(212,175,55,0.15);
+      box-shadow:0 15px 40px rgba(212,175,55,0.2);
     }
     .exp-header{
       display:flex;
@@ -830,7 +801,7 @@
     .step-card:hover{
       border-color:var(--accent);
       transform:translateY(-10px);
-      box-shadow:0 20px 50px rgba(212,175,55,0.2);
+      box-shadow:0 20px 50px rgba(212,175,55,0.25);
     }
 
     .projects{
@@ -862,7 +833,7 @@
     .project-tag{
       display:inline-block;
       background:linear-gradient(135deg,#d4af37,#e8c547);
-      color:#0a0e1f;
+      color:#050814;
       padding:6px 14px;
       border-radius:999px;
       font-size:0.7rem;
@@ -904,7 +875,7 @@
     .project-card:hover{
       border-color:var(--accent);
       transform:translateY(-12px);
-      box-shadow:0 30px 60px rgba(212,175,55,0.25);
+      box-shadow:0 30px 60px rgba(212,175,55,0.3);
     }
     .project-card:hover::before{
       opacity:1;
@@ -925,7 +896,7 @@
     .skill-category:hover{
       border-color:var(--accent);
       transform:translateY(-8px);
-      box-shadow:0 20px 40px rgba(212,175,55,0.15);
+      box-shadow:0 20px 40px rgba(212,175,55,0.2);
     }
     .skill-cat-title{
       font-weight:700;
@@ -966,7 +937,7 @@
     .cert-badge:hover{
       border-color:var(--accent);
       transform:translateY(-8px);
-      box-shadow:0 20px 40px rgba(212,175,55,0.15);
+      box-shadow:0 20px 40px rgba(212,175,55,0.2);
     }
     .cert-icon{
       font-size:2.5rem;
@@ -1007,7 +978,7 @@
       padding:12px 16px;
       border-radius:8px;
       border:1px solid rgba(212,175,55,0.2);
-      background:rgba(10,14,31,0.6);
+      background:rgba(5,8,20,0.85);
       color:var(--text);
       font-size:0.95rem;
       transition:all 0.3s ease;
@@ -1015,8 +986,8 @@
     input:focus,textarea:focus{
       border-color:var(--accent);
       outline:none;
-      background:rgba(10,14,31,0.8);
-      box-shadow:0 0 20px rgba(212,175,55,0.2);
+      background:rgba(5,8,20,1);
+      box-shadow:0 0 20px rgba(212,175,55,0.25);
     }
     textarea{min-height:120px;resize:vertical;}
 
@@ -1040,8 +1011,8 @@
       transition:all 0.3s ease;
     }
     .contact-icon:hover{
-      background:rgba(212,175,55,0.15);
-      transform:scale(1.1);
+      background:rgba(212,175,55,0.18);
+      transform:scale(1.08);
     }
     .contact-content{
       display:grid;gap:4px;
@@ -1067,8 +1038,8 @@
       padding:32px 7vw;
       font-size:0.75rem;
       color:var(--muted);
-      border-top:1px solid rgba(212,175,55,0.15);
-      background:rgba(10,14,31,0.98);
+      border-top:1px solid rgba(212,175,55,0.18);
+      background:rgba(5,8,20,0.99);
       display:flex;justify-content:space-between;align-items:center;
       flex-wrap:wrap;gap:16px;
       text-transform:uppercase;
@@ -1093,7 +1064,6 @@
       .skills-container{grid-template-columns:repeat(2,1fr);}
       .certifications{grid-template-columns:repeat(2,1fr);}
       .contact-box{grid-template-columns:1fr;}
-      .chart-grid{grid-template-columns:1fr;}
       .achievements-container{grid-template-columns:1fr;}
     }
     @media (max-width:640px){
@@ -1107,7 +1077,6 @@
       .certifications{grid-template-columns:1fr;}
       nav{gap:16px;}
       nav a{font-size:0.7rem;}
-      .chart-wrapper{height:250px;}
     }
   </style>
 </head>
@@ -1118,16 +1087,17 @@
   <div class="mesh-ribbon mesh-3"></div>
   <div class="mesh-ribbon mesh-4"></div>
   <div class="mesh-ribbon mesh-5"></div>
-  <div class="mesh-ribbon mesh-6"></div>
-  <div class="mesh-ribbon mesh-7"></div>
-  <div class="mesh-ribbon mesh-8"></div>
-  <div class="mesh-ribbon mesh-9"></div>
-  <div class="mesh-ribbon mesh-10"></div>
+  <div class="data-wave data-wave-1"></div>
+  <div class="data-wave data-wave-2"></div>
   <div class="wireframe-pattern wireframe-1"></div>
   <div class="wireframe-pattern wireframe-2"></div>
   <div class="wireframe-pattern wireframe-3"></div>
   <div class="wireframe-pattern wireframe-4"></div>
+  <div class="cluster-grid cluster-1"></div>
+  <div class="cluster-grid cluster-2"></div>
+  <div class="cluster-grid cluster-3"></div>
 </div>
+<div class="nodes-layer"></div>
 <div class="particles"></div>
 <div class="noise"></div>
 
@@ -1188,7 +1158,7 @@
     <div class="section-label">Track Record</div>
     <h2 class="section-title">Impactful Achievements & Metrics</h2>
     <p class="section-desc">
-      Data-driven results spanning financial impact, operational efficiency, and organizational transformation.
+      Data-driven results across revenue, efficiency, and organizational transformation.
     </p>
     
     <div class="achievements-container">
@@ -1196,107 +1166,72 @@
         <span class="achievement-badge">Financial Impact</span>
         <div class="achievement-value">$500K+</div>
         <div class="achievement-title">Value Unlocked</div>
-        <div class="achievement-desc">Direct revenue impact and cost savings through predictive analytics, optimization initiatives, and strategic data initiatives across 5+ enterprise clients.</div>
+        <div class="achievement-desc">Delivered measurable revenue uplift and cost savings through predictive analytics, pricing optimisation, and portfolio performance reporting.</div>
       </div>
 
       <div class="achievement-card">
         <span class="achievement-badge">Performance</span>
         <div class="achievement-value">42%</div>
         <div class="achievement-title">Pipeline Speed Improvement</div>
-        <div class="achievement-desc">Engineered high-performance ETL systems reducing data pipeline execution times from hours to minutes, enabling real-time analytics at scale.</div>
+        <div class="achievement-desc">Re-engineered data pipelines and SQL workloads to cut refresh times from hours to minutes, enabling near real-time decision-making.</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">AI/ML</span>
+        <span class="achievement-badge">AI & ML</span>
         <div class="achievement-value">92%</div>
         <div class="achievement-title">Model Precision</div>
-        <div class="achievement-desc">Deployed production ML models with 92% precision for predictive maintenance, reducing downtime by $500K+ annually across manufacturing networks.</div>
+        <div class="achievement-desc">Shipped production machine learning solutions for risk and maintenance use cases with robust monitoring, versioning, and explainability.</div>
       </div>
 
       <div class="achievement-card">
         <span class="achievement-badge">Scale</span>
         <div class="achievement-value">200+</div>
-        <div class="achievement-title">Concurrent Users</div>
-        <div class="achievement-desc">Architected enterprise BI platforms serving 200+ business users with semantic governance, role-based access, and audit compliance across financial services.</div>
+        <div class="achievement-title">Active Business Users</div>
+        <div class="achievement-desc">Designed enterprise BI estates with governed semantic models, role-based access, and auditability for global stakeholder groups.</div>
       </div>
 
       <div class="achievement-card">
         <span class="achievement-badge">Governance</span>
         <div class="achievement-value">100%</div>
-        <div class="achievement-title">Compliance Coverage</div>
-        <div class="achievement-desc">Implemented comprehensive data governance frameworks achieving SOX, HIPAA, and regulatory compliance with automated lineage tracking and quality monitoring.</div>
+        <div class="achievement-title">Critical Data Covered</div>
+        <div class="achievement-desc">Implemented data quality rules, lineage, and controls for SOX and HIPAA data domains, reducing reporting risk and audit issues.</div>
       </div>
 
       <div class="achievement-card">
         <span class="achievement-badge">Team Impact</span>
         <div class="achievement-value">4+</div>
         <div class="achievement-title">Analysts Mentored</div>
-        <div class="achievement-desc">Led analytics team development, establishing best practices in SQL optimization, data modeling, and BI design used across organizational departments.</div>
-      </div>
-    </div>
-
-    <div style="margin-top:64px;">
-      <div class="section-label" style="margin-top:32px;">Analytics & Insights</div>
-      <h2 class="section-title" style="margin-bottom:32px;">Performance Metrics & Impact Visualizations</h2>
-      
-      <div class="chart-grid">
-        <div class="chart-container">
-          <div class="chart-title">Career Growth & Project Delivery</div>
-          <div class="chart-wrapper">
-            <canvas id="careerChart"></canvas>
-          </div>
-        </div>
-
-        <div class="chart-container">
-          <div class="chart-title">Business Value Generated</div>
-          <div class="chart-wrapper">
-            <canvas id="valueChart"></canvas>
-          </div>
-        </div>
-
-        <div class="chart-container">
-          <div class="chart-title">Project Distribution by Industry</div>
-          <div class="chart-wrapper">
-            <canvas id="industryChart"></canvas>
-          </div>
-        </div>
-
-        <div class="chart-container">
-          <div class="chart-title">Key Performance Achievements</div>
-          <div class="chart-wrapper">
-            <canvas id="performanceChart"></canvas>
-          </div>
-        </div>
+        <div class="achievement-desc">Built reusable playbooks for SQL, modelling, and dashboard design adopted across analytics teams and new project workstreams.</div>
       </div>
     </div>
   </section>
 
   <section id="about" class="fade-in">
-    <div class="section-label">Who I Am</div>
+    <div class="section-label">Profile</div>
     <h2 class="section-title">Engineering Trust Through Data Excellence</h2>
     <p class="section-desc">
-      Blending business acumen, enterprise-grade data architectures, and ML expertise to deliver analytics that executives rely on for high-stakes decisions.
+      Combining business context, rigorous analytics, and production-grade implementation to turn data into decisions executives can rely on.
     </p>
     <div class="grid-4">
       <div class="card-feature">
         <div class="feature-icon">∞</div>
         <div class="feature-title">Enterprise Scale</div>
-        <div class="feature-text">BI ecosystems for 200+ concurrent users with semantic governance, role-based access controls, and multi-tenant architectures.</div>
+        <div class="feature-text">Designed BI and analytics ecosystems for hundreds of concurrent users, with governed models and secure self-service exploration.</div>
       </div>
       <div class="card-feature">
         <div class="feature-icon">✓</div>
         <div class="feature-title">Compliance First</div>
-        <div class="feature-text">Implemented lineage tracking, data quality frameworks, audit trails, and regulatory compliance for SOX and HIPAA standards.</div>
+        <div class="feature-text">Delivered HIPAA- and SOX-aligned analytics stacks with lineage, access controls, and traceable metric definitions.</div>
       </div>
       <div class="card-feature">
         <div class="feature-icon">⚡</div>
         <div class="feature-title">Performance</div>
-        <div class="feature-text">Optimized ETL and SQL workloads for 25–40% faster pipelines, query performance tuning, and reduced infrastructure costs.</div>
+        <div class="feature-text">Optimised SQL, ETL, and storage to reduce compute cost and latency while preserving accuracy and stability.</div>
       </div>
       <div class="card-feature">
         <div class="feature-icon">AI</div>
         <div class="feature-title">Applied ML</div>
-        <div class="feature-text">Built production-grade risk and prediction models using Python, scikit-learn, XGBoost with model monitoring and versioning.</div>
+        <div class="feature-text">Built and deployed models for risk, demand, and maintenance with full MLOps lifecycle and stakeholder-friendly outputs.</div>
       </div>
     </div>
   </section>
@@ -1305,7 +1240,7 @@
     <div class="section-label">Career Timeline</div>
     <h2 class="section-title">Professional Experience</h2>
     <p class="section-desc">
-      5+ years in analytics-focused roles, driving data-driven transformation across financial services, healthcare, and enterprise sectors.
+      End-to-end analytics delivery across financial services, healthcare, and digital commerce.
     </p>
     <div class="experience-list">
       <div class="exp-item">
@@ -1317,7 +1252,7 @@
           <div class="exp-period">2022 - Present</div>
         </div>
         <p class="exp-desc">
-          Led analytics modernization for enterprise BI platforms, overseeing 200+ business users. Designed semantic layers, implemented governance frameworks, and reduced query latency by 35%. Mentored 3 junior analysts on best practices in SQL optimization and data modeling.
+          Led BI modernisation for executive and regulatory reporting. Defined metrics, modelled warehouse views, and delivered dashboards used by leadership and operations daily.
         </p>
         <div class="exp-skills">
           <span class="skill-tag">Power BI</span>
@@ -1338,7 +1273,7 @@
           <div class="exp-period">2021 - 2022</div>
         </div>
         <p class="exp-desc">
-          Developed predictive models for patient readmission risk (85% AUC-PR), enabling proactive clinical interventions. Built HIPAA-compliant dashboards and automated reporting workflows, reducing manual reporting time by 40%.
+          Built patient risk stratification and utilisation reporting. Partnered with clinicians to align features with outcomes and translated insights into actionable workflows.
         </p>
         <div class="exp-skills">
           <span class="skill-tag">Python</span>
@@ -1354,12 +1289,12 @@
         <div class="exp-header">
           <div>
             <div class="exp-title">Data Analyst</div>
-            <div class="exp-role">ECommerce</div>
+            <div class="exp-role">E-Commerce</div>
           </div>
           <div class="exp-period">2020 - 2021</div>
         </div>
         <p class="exp-desc">
-          Engineered data pipelines processing 10M+ daily transactions. Created real-time dashboards for sales and inventory optimization. Identified $200K+ annual cost savings through demand forecasting models.
+          Owned sales and inventory analytics across millions of transactions. Created automated reporting and forecasting that guided merchandising and marketing decisions.
         </p>
         <div class="exp-skills">
           <span class="skill-tag">SQL</span>
@@ -1375,30 +1310,30 @@
 
   <section id="process" class="fade-in">
     <div class="section-label">Methodology</div>
-    <h2 class="section-title">Proven Path to Analytics Success</h2>
+    <h2 class="section-title">A Repeatable Analytics Delivery Framework</h2>
     <p class="section-desc">
-      A repeatable 4-step framework that keeps projects predictable while adapting to unique business needs and scaling challenges.
+      Structured, collaborative delivery from discovery to scale, tuned for executive stakeholders and technical teams.
     </p>
     <div class="steps">
       <div class="step-card">
         <div class="step-number">01</div>
         <div class="step-title">Discover</div>
-        <div class="step-text">Define business goals, KPIs, data landscape, compliance requirements, and success metrics upfront.</div>
+        <div class="step-text">Clarify business goals, stakeholders, KPIs, data sources, and constraints before writing a single query.</div>
       </div>
       <div class="step-card">
         <div class="step-number">02</div>
         <div class="step-title">Design</div>
-        <div class="step-text">Map architecture, semantic models, data contracts, SLAs, and governance frameworks for sustainability.</div>
+        <div class="step-text">Shape data models, semantic layers, and governance with long-term maintainability and self-service in mind.</div>
       </div>
       <div class="step-card">
         <div class="step-number">03</div>
         <div class="step-title">Build</div>
-        <div class="step-text">Implement ETL/ELT, ML models, and visual dashboards with production standards and automated testing.</div>
+        <div class="step-text">Implement pipelines, calculations, and visual experiences with tests, documentation, and version control.</div>
       </div>
       <div class="step-card">
         <div class="step-number">04</div>
         <div class="step-title">Scale</div>
-        <div class="step-text">Deploy monitoring, runbooks, training, and documentation for autonomous operations and team adoption.</div>
+        <div class="step-text">Handover with training, monitoring, and runbooks so teams can trust and extend the solution.</div>
       </div>
     </div>
   </section>
@@ -1407,7 +1342,7 @@
     <div class="section-label">Selected Work</div>
     <h2 class="section-title">Analytics & ML in Production</h2>
     <p class="section-desc">
-      Real-world applications of data engineering, governance, and ML that drive measurable business impact and organizational transformation.
+      A sample of projects showing how raw data was turned into decisions, savings, and new opportunities.
     </p>
     <div class="projects">
       <div class="project-card">
@@ -1415,12 +1350,12 @@
           <span class="project-tag">Python • XGBoost • SQL</span>
           <h3 class="project-title">Healthcare Risk Model</h3>
           <div class="project-metric">85% AUC-PR</div>
-          <p class="project-desc">Risk stratification on clinical records to flag high-risk patients and guide clinical interventions.</p>
+          <p class="project-desc">Scored patient readmission risk using clinical, demographic, and utilisation data to prioritise interventions.</p>
           <ul class="project-list">
-            <li>HIPAA-compliant encrypted pipeline with role-based access controls</li>
-            <li>Calibrated decision thresholds for clinical deployment and FDA compliance</li>
-            <li>Real-time clinician dashboards for impact tracking and intervention monitoring</li>
-            <li>Reduced 30-day readmission rate by 12% across 5 hospital networks</li>
+            <li>Secured HIPAA-compliant data flows with encryption and least-privilege access.</li>
+            <li>Calibrated thresholds with clinicians to balance sensitivity and workload.</li>
+            <li>Exposed predictions in intuitive ward-level dashboards and worklists.</li>
+            <li>Contributed to a measurable drop in 30-day readmissions.</li>
           </ul>
           <a href="https://github.com" class="btn-ghost" target="_blank">View Notebook →</a>
         </div>
@@ -1431,12 +1366,12 @@
           <span class="project-tag">Analytics • Python • Power BI</span>
           <h3 class="project-title">EV Market Expansion</h3>
           <div class="project-metric">35% Premium</div>
-          <p class="project-desc">County-level demand analysis and scenario modeling for EV rollout prioritization and market entry strategy.</p>
+          <p class="project-desc">Ranked US markets for EV roll-out by combining demand signals, infrastructure, and competitive intelligence.</p>
           <ul class="project-list">
-            <li>Blended demographic, infrastructure, and competitive pricing data from 12+ sources</li>
-            <li>Multi-scenario financial modeling for 5 different market expansion strategies</li>
-            <li>Executive drill-down dashboards with geographic heat maps and KPI tracking</li>
-            <li>Identified 35% demand premium in tier-1 markets, driving $50M+ capital allocation</li>
+            <li>Unified 12+ public and internal datasets into a clean analytical layer.</li>
+            <li>Modelled multiple growth scenarios and unit economics by region.</li>
+            <li>Built executive views with map drill-downs and sensitivity toggles.</li>
+            <li>Influenced capital deployment into highest-lift geographies.</li>
           </ul>
           <a href="https://powerbi.com" class="btn-ghost" target="_blank">View Dashboard →</a>
         </div>
@@ -1444,15 +1379,15 @@
 
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">Time-Series • Databricks • ML Ops</span>
+          <span class="project-tag">Time-Series • Databricks • MLOps</span>
           <h3 class="project-title">Predictive Maintenance</h3>
           <div class="project-metric">92% Precision</div>
-          <p class="project-desc">Sensor-based anomaly detection enabling proactive maintenance before critical downtime occurs.</p>
+          <p class="project-desc">Used streaming sensor data to anticipate equipment failures and schedule interventions before downtime.</p>
           <ul class="project-list">
-            <li>Real-time streaming ingestion processing 50K events/sec with feature engineering</li>
-            <li>Model monitoring and escalation runbooks with automated alerting</li>
-            <li>Estimated $500K+ annual savings from prevented unplanned outages</li>
-            <li>Deployed to production across 15 manufacturing facilities globally</li>
+            <li>Ingested and featurised tens of thousands of events per second.</li>
+            <li>Deployed models with monitoring on drift, performance, and coverage.</li>
+            <li>Integrated alerts into existing operations tooling and processes.</li>
+            <li>Protected revenue by reducing critical unplanned outages.</li>
           </ul>
           <a href="https://databricks.com" class="btn-ghost" target="_blank">View Architecture →</a>
         </div>
@@ -1464,7 +1399,7 @@
     <div class="section-label">Technical Arsenal</div>
     <h2 class="section-title">Skills & Expertise</h2>
     <p class="section-desc">
-      Comprehensive toolkit across data engineering, analytics platforms, machine learning, and cloud infrastructure.
+      Tools and platforms used frequently to design, build, and ship analytics solutions.
     </p>
     <div class="skills-container">
       <div class="skill-category">
@@ -1475,19 +1410,19 @@
           <span class="skill-item">Looker</span>
           <span class="skill-item">DAX</span>
           <span class="skill-item">Qlik</span>
-          <span class="skill-item">Excel/VBA</span>
+          <span class="skill-item">Excel / VBA</span>
         </div>
       </div>
 
       <div class="skill-category">
         <div class="skill-cat-title">Data Engineering</div>
         <div class="skill-list">
-          <span class="skill-item">Python (Advanced)</span>
-          <span class="skill-item">SQL Server (Expert)</span>
+          <span class="skill-item">Python</span>
+          <span class="skill-item">SQL Server</span>
           <span class="skill-item">PostgreSQL</span>
           <span class="skill-item">Apache Spark</span>
-          <span class="skill-item">ETL/ELT</span>
-          <span class="skill-item">Data Modeling</span>
+          <span class="skill-item">ETL / ELT</span>
+          <span class="skill-item">Data Modelling</span>
         </div>
       </div>
 
@@ -1498,7 +1433,7 @@
           <span class="skill-item">XGBoost</span>
           <span class="skill-item">TensorFlow</span>
           <span class="skill-item">Predictive Analytics</span>
-          <span class="skill-item">Time-Series Analysis</span>
+          <span class="skill-item">Time-Series</span>
           <span class="skill-item">Model Deployment</span>
         </div>
       </div>
@@ -1506,7 +1441,7 @@
       <div class="skill-category">
         <div class="skill-cat-title">Cloud Platforms</div>
         <div class="skill-list">
-          <span class="skill-item">Azure (Advanced)</span>
+          <span class="skill-item">Azure</span>
           <span class="skill-item">AWS</span>
           <span class="skill-item">Google Cloud</span>
           <span class="skill-item">Databricks</span>
@@ -1516,26 +1451,26 @@
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Development & Tools</div>
+        <div class="skill-cat-title">Development</div>
         <div class="skill-list">
-          <span class="skill-item">Git/GitHub</span>
-          <span class="skill-item">Jupyter Notebooks</span>
+          <span class="skill-item">Git / GitHub</span>
+          <span class="skill-item">Jupyter</span>
           <span class="skill-item">VS Code</span>
           <span class="skill-item">Docker</span>
-          <span class="skill-item">CI/CD Pipelines</span>
+          <span class="skill-item">CI / CD</span>
           <span class="skill-item">Linux</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Specializations</div>
+        <div class="skill-cat-title">Specialisations</div>
         <div class="skill-list">
           <span class="skill-item">Data Governance</span>
           <span class="skill-item">Data Quality</span>
-          <span class="skill-item">HIPAA Compliance</span>
-          <span class="skill-item">SOX Compliance</span>
-          <span class="skill-item">Business Analytics</span>
-          <span class="skill-item">Strategic Planning</span>
+          <span class="skill-item">HIPAA</span>
+          <span class="skill-item">SOX</span>
+          <span class="skill-item">Business Analysis</span>
+          <span class="skill-item">Strategy</span>
         </div>
       </div>
     </div>
@@ -1545,13 +1480,13 @@
     <div class="section-label">Credentials</div>
     <h2 class="section-title">Certifications & Recognition</h2>
     <p class="section-desc">
-      Industry-recognized certifications validating expertise in analytics, cloud platforms, and data science disciplines.
+      External validation of skills across analytics, cloud, and applied machine learning.
     </p>
     <div class="certifications">
       <div class="cert-badge">
         <div class="cert-icon">📊</div>
         <div class="cert-title">Microsoft Certified</div>
-        <div class="cert-issuer">Data Analyst & Power BI</div>
+        <div class="cert-issuer">Data Analyst (Power BI)</div>
       </div>
       <div class="cert-badge">
         <div class="cert-icon">☁️</div>
@@ -1567,10 +1502,10 @@
   </section>
 
   <section id="contact" class="fade-in">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Let's Build Your Analytics Edge</h2>
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let’s Talk About Your Data</h2>
     <p class="section-desc">
-      Share your challenge and current tech stack. I'll provide a thoughtful response with strategic recommendations within 24 hours.
+      Share a bit about your use case, stack, and timelines. A concise response with clear next steps will follow.
     </p>
     <div class="contact-box">
       <form id="contact-form" onsubmit="handleFormSubmit(event)">
@@ -1588,7 +1523,7 @@
         </div>
         <div>
           <label>Your Challenge</label>
-          <textarea id="message" required placeholder="Describe your analytics challenge, data volume, current tools..."></textarea>
+          <textarea id="message" required placeholder="Briefly describe your analytics challenge and current tools."></textarea>
         </div>
         <button type="submit" class="btn-primary">Send Message</button>
         <p id="form-status" style="font-size:0.8rem;color:var(--muted);margin-top:4px;"></p>
@@ -1616,8 +1551,8 @@
             <div class="contact-value" onclick="openLink('https://github.com/hrushikesh-singh')">github.com/hrushikesh-singh</div>
           </div>
         </div>
-        <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-top:16px;border-top:1px solid rgba(212,175,55,0.2);padding-top:16px;">
-          Proficient in Python, SQL, Power BI, Tableau, Azure, AWS, Databricks, Snowflake, and modern data engineering stacks. Available for consulting, full-time roles, and strategic partnership opportunities.
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-top:16px;border-top:1px solid rgba(212,175,55,0.22);padding-top:16px;">
+          Comfortable working across Python, SQL, Power BI, Tableau, Azure, AWS, Databricks, and Snowflake. Open to consulting, full-time roles, and collaborations.
         </p>
       </div>
     </div>
@@ -1626,165 +1561,85 @@
 
 <footer>
   <span>© 2025 Hrushikesh Singh · Senior Analytics Professional</span>
-  <span>Built with HTML, CSS, JavaScript & Chart.js</span>
+  <span>Built with HTML, CSS & JavaScript</span>
 </footer>
 
 <script>
+  // particles
   function createParticles(){
     const particlesContainer = document.querySelector('.particles');
     for(let i = 0; i < 40; i++){
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animation = `float ${3 + Math.random() * 5}s ease-in-out infinite`;
-      particle.style.animationDelay = Math.random() * 2 + 's';
-      particlesContainer.appendChild(particle);
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.animation = `float ${3 + Math.random() * 5}s ease-in-out infinite`;
+      p.style.animationDelay = Math.random() * 2 + 's';
+      particlesContainer.appendChild(p);
     }
   }
+
+  // floating nodes
+  function createNodes(){
+    const layer = document.querySelector('.nodes-layer');
+    const nodePositions = [
+      {top:'18%',left:'22%'},{top:'26%',left:'38%'},{top:'34%',left:'16%'},
+      {top:'42%',left:'29%'},{top:'56%',left:'18%'},{top:'64%',left:'32%'},
+      {top:'20%',right:'18%'},{top:'32%',right:'26%'},{top:'48%',right:'14%'},
+      {bottom:'18%',right:'26%'},{bottom:'26%',right:'14%'},{bottom:'34%',right:'30%'}
+    ];
+    nodePositions.forEach((pos,idx)=>{
+      const n = document.createElement('div');
+      n.className = 'data-node';
+      Object.assign(n.style,pos);
+      const ring = document.createElement('div');
+      ring.className = 'data-node-ring';
+      ring.style.top = `calc(${pos.top || pos.bottom} - 30px)`;
+      if(pos.left) ring.style.left = `calc(${pos.left} - 30px)`;
+      if(pos.right) ring.style.right = `calc(${pos.right} - 30px)`;
+      ring.style.animation = `nodePulse ${8 + idx}s ease-in-out infinite`;
+      n.style.animation = `nodeFloat ${6 + idx}s ease-in-out infinite`;
+      layer.appendChild(ring);
+      layer.appendChild(n);
+    });
+
+    const nodeStyle = document.createElement('style');
+    nodeStyle.textContent = `
+      @keyframes nodeFloat{
+        0%{transform:translateY(0);}
+        50%{transform:translateY(-10px);}
+        100%{transform:translateY(0);}
+      }
+      @keyframes nodePulse{
+        0%{transform:scale(0.9);opacity:0.25;}
+        50%{transform:scale(1.05);opacity:0.5;}
+        100%{transform:scale(0.9);opacity:0.25;}
+      }
+      @keyframes float{
+        0%{transform:translateY(0) translateX(0);}
+        50%{transform:translateY(-30px) translateX(10px);}
+        100%{transform:translateY(0) translateX(0);}
+      }
+    `;
+    document.head.appendChild(nodeStyle);
+  }
+
+  // heatmap clusters
+  function fillClusters(){
+    document.querySelectorAll('.cluster-grid').forEach((grid)=>{
+      for(let i=0;i<30;i++){
+        const cell=document.createElement('div');
+        cell.className='cluster-cell';
+        grid.appendChild(cell);
+      }
+    });
+  }
+
   createParticles();
+  createNodes();
+  fillClusters();
 
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes float{
-      0%{transform:translateY(0) translateX(0);}
-      50%{transform:translateY(-30px) translateX(10px);}
-      100%{transform:translateY(0) translateX(0);}
-    }
-  `;
-  document.head.appendChild(style);
-
-  const chartConfig = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        labels: {
-          color: '#8a92a8',
-          font: { size: 12, weight: 'bold' },
-          padding: 15
-        }
-      }
-    },
-    scales: {
-      y: {
-        ticks: { color: '#8a92a8', font: { size: 11 } },
-        grid: { color: 'rgba(212,175,55,0.1)' }
-      },
-      x: {
-        ticks: { color: '#8a92a8', font: { size: 11 } },
-        grid: { color: 'rgba(212,175,55,0.1)' }
-      }
-    }
-  };
-
-  const careerCtx = document.getElementById('careerChart').getContext('2d');
-  new Chart(careerCtx, {
-    type: 'line',
-    data: {
-      labels: ['2020', '2021', '2022', '2023', '2024'],
-      datasets: [
-        {
-          label: 'Years Experience',
-          data: [2, 3, 4, 5, 5.5],
-          borderColor: '#d4af37',
-          backgroundColor: 'rgba(212,175,55,0.1)',
-          tension: 0.4,
-          fill: true,
-          pointRadius: 6,
-          pointBackgroundColor: '#d4af37',
-          pointBorderColor: '#f5f5f5'
-        },
-        {
-          label: 'Projects Delivered',
-          data: [8, 15, 24, 32, 38],
-          borderColor: '#e8c547',
-          backgroundColor: 'rgba(232,197,71,0.1)',
-          tension: 0.4,
-          fill: true,
-          pointRadius: 6,
-          pointBackgroundColor: '#e8c547',
-          pointBorderColor: '#f5f5f5'
-        }
-      ]
-    },
-    options: chartConfig
-  });
-
-  const valueCtx = document.getElementById('valueChart').getContext('2d');
-  new Chart(valueCtx, {
-    type: 'bar',
-    data: {
-      labels: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024'],
-      datasets: [
-        {
-          label: 'Revenue Impact ($K)',
-          data: [85, 150, 220, 280, 350, 420],
-          backgroundColor: 'rgba(212,175,55,0.7)',
-          borderColor: '#d4af37',
-          borderWidth: 2
-        },
-        {
-          label: 'Cost Savings ($K)',
-          data: [30, 65, 110, 150, 190, 240],
-          backgroundColor: 'rgba(232,197,71,0.5)',
-          borderColor: '#e8c547',
-          borderWidth: 2
-        }
-      ]
-    },
-    options: chartConfig
-  });
-
-  const industryCtx = document.getElementById('industryChart').getContext('2d');
-  new Chart(industryCtx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Financial Services', 'Healthcare', 'E-Commerce', 'Manufacturing', 'Other'],
-      datasets: [{
-        data: [35, 28, 18, 12, 7],
-        backgroundColor: [
-          'rgba(212,175,55,0.9)',
-          'rgba(232,197,71,0.8)',
-          'rgba(212,175,55,0.7)',
-          'rgba(232,197,71,0.6)',
-          'rgba(212,175,55,0.5)'
-        ],
-        borderColor: '#0a0e1f',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      ...chartConfig,
-      plugins: {
-        ...chartConfig.plugins,
-        legend: {
-          ...chartConfig.plugins.legend,
-          position: 'bottom'
-        }
-      }
-    }
-  });
-
-  const performanceCtx = document.getElementById('performanceChart').getContext('2d');
-  new Chart(performanceCtx, {
-    type: 'bar',
-    data: {
-      labels: ['Query Performance', 'Pipeline Efficiency', 'Report Speed', 'Cost Reduction', 'User Adoption', 'System Uptime'],
-      datasets: [{
-        label: 'Achievement %',
-        data: [38, 42, 55, 28, 94, 99.7],
-        backgroundColor: 'rgba(212,175,55,0.8)',
-        borderColor: '#d4af37',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      ...chartConfig,
-      indexAxis: 'y'
-    }
-  });
-
+  // nav highlight
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -1805,6 +1660,7 @@
   );
   sections.forEach((sec) => sectionObserver.observe(sec));
 
+  // fade-in
   const fades = document.querySelectorAll(".fade-in");
   const fadeObserver = new IntersectionObserver(
     (entries) => {
@@ -1819,6 +1675,7 @@
   );
   fades.forEach((el) => fadeObserver.observe(el));
 
+  // form
   function handleFormSubmit(e){
     e.preventDefault();
     const name = document.getElementById("name").value.trim() || "there";
@@ -1826,36 +1683,32 @@
     const company = document.getElementById("company").value.trim();
     const message = document.getElementById("message").value.trim();
     const status = document.getElementById("form-status");
-    
-    status.textContent = `✓ Thanks, ${name}! Your message has been received. I'll respond within 24 hours.`;
+    status.textContent = `✓ Thanks, ${name}! Your message has been received. A reply will follow shortly.`;
     status.style.color = 'var(--accent)';
-    
     console.log({name, email, company, message});
-    
     setTimeout(() => {
       document.getElementById("contact-form").reset();
       status.textContent = '';
-    }, 3000);
+    }, 3500);
   }
 
+  // helpers
   function copyToClipboard(text){
     navigator.clipboard.writeText(text).then(() => {
-      alert('Email copied to clipboard!');
+      alert('Email copied to clipboard.');
     });
   }
-
   function openEmail(){
     window.location.href = 'mailto:hrushisingh697@gmail.com?subject=Analytics Project Inquiry';
   }
-
   function openLink(url){
     window.open(url, '_blank');
   }
-
   function downloadResume(){
     alert('Resume download link: /documents/Hrushikesh_Singh_Resume.pdf');
   }
 
+  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e){
       e.preventDefault();
