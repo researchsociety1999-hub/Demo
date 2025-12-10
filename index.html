@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hrushikesh Singh — Senior Analytics & Data Strategy Portfolio</title>
+  <title>Hrushikesh Singh Bondili — Senior Business & Data Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <style>
     :root{
       --bg:#050814;
@@ -27,7 +26,6 @@
       overflow-x:hidden;
     }
 
-    /* DATA / ANALYTICS THEMED BACKGROUND */
     body::before{
       content:"";
       position:fixed;
@@ -67,7 +65,6 @@
       50%{opacity:0.75;}
     }
 
-    /* 3D RIBBONS + DATA WAVES */
     .mesh-container{
       position:fixed;
       inset:0;
@@ -144,7 +141,6 @@
       animation:ribbon5 24s ease-in-out infinite;
     }
 
-    /* 3D DATA WAVE BANDS (like timelines / line charts) */
     .data-wave{
       position:absolute;
       width:220%;
@@ -170,7 +166,6 @@
       animation:dataWave2 28s ease-in-out infinite;
     }
 
-    /* FLOATING 3D NODES / POINTS (like scatter / network) */
     .data-node{
       position:absolute;
       width:6px;
@@ -196,7 +191,6 @@
       z-index:-3;
     }
 
-    /* ANALYTICS GRID CLUSTERS (like heatmaps) */
     .cluster-grid{
       position:absolute;
       display:grid;
@@ -217,7 +211,6 @@
     .cluster-2{top:46%;left:4%;}
     .cluster-3{bottom:14%;right:20%;}
 
-    /* WIREFRAMES (cubes / hex / charts) */
     .wireframe-pattern{
       position:absolute;
       mix-blend-mode:screen;
@@ -259,7 +252,6 @@
       animation:wireframeRotate 32s linear infinite reverse;
     }
 
-    /* BACKGROUND ANIMATIONS */
     @keyframes ribbon1{
       0%{transform:translate3d(0,0,0) rotate(-10deg) scaleX(1.3);}
       25%{transform:translate3d(40px,-50px,0) rotate(-5deg) scaleX(1.5);}
@@ -445,9 +437,9 @@
       gap:80px;
     }
     .hero h1{
-      font-size:3.8rem;
+      font-size:3.6rem;
       line-height:1.1;
-      margin-bottom:20px;
+      margin-bottom:12px;
       font-weight:900;
       letter-spacing:-0.02em;
     }
@@ -458,17 +450,21 @@
       color:transparent;
     }
     .hero-sub{
-      max-width:540px;
+      max-width:640px;
       color:var(--muted);
-      margin-bottom:32px;
-      font-size:1.05rem;
-      line-height:1.6;
+      margin-bottom:28px;
+      font-size:1.02rem;
+      line-height:1.7;
+    }
+    .hero-sub-strong{
+      font-weight:600;
+      color:var(--accent-light);
     }
     .hero-stats{
       display:flex;
       flex-wrap:wrap;
       gap:32px;
-      margin-bottom:40px;
+      margin-bottom:32px;
     }
     .stat-item{
       display:flex;
@@ -849,8 +845,8 @@
       color:var(--text);
     }
     .project-metric{
-      font-size:1.8rem;
-      font-weight:900;
+      font-size:1.1rem;
+      font-weight:700;
       color:var(--accent);
       margin-bottom:16px;
     }
@@ -921,9 +917,35 @@
       font-weight:600;
     }
 
+    .education-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+      margin-bottom:32px;
+    }
+    .edu-card{
+      background:linear-gradient(135deg,rgba(212,175,55,0.06),rgba(212,175,55,0.02));
+      border:1px solid rgba(212,175,55,0.22);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+    .edu-title{
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .edu-meta{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .edu-detail{
+      font-size:0.85rem;
+      color:var(--muted);
+    }
+
     .certifications{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:20px;
     }
     .cert-badge{
@@ -1062,6 +1084,7 @@
       .steps{grid-template-columns:repeat(2,1fr);}
       .projects{grid-template-columns:repeat(2,1fr);}
       .skills-container{grid-template-columns:repeat(2,1fr);}
+      .education-grid{grid-template-columns:1fr;}
       .certifications{grid-template-columns:repeat(2,1fr);}
       .contact-box{grid-template-columns:1fr;}
       .achievements-container{grid-template-columns:1fr;}
@@ -1114,18 +1137,20 @@
     <a href="#process" class="nav-link">Process</a>
     <a href="#projects" class="nav-link">Projects</a>
     <a href="#skills" class="nav-link">Skills</a>
+    <a href="#education" class="nav-link">Education</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
-  <a href="#resume" class="btn-header" onclick="downloadResume()">Download Resume</a>
+  <a href="#hero" class="btn-header" onclick="downloadResume()">Download Resume</a>
 </header>
 
 <main>
   <section id="hero" class="fade-in">
     <div class="hero">
       <div>
-        <h1>Hrushikesh<br><span>Singh</span></h1>
+        <h1>Hrushikesh<br><span>Singh Bondili</span></h1>
         <p class="hero-sub">
-          Senior Business & Data Analyst with 5+ years transforming enterprise data into competitive advantages through advanced BI platforms, data governance, machine learning, and strategic analytics.
+          <span class="hero-sub-strong">Senior Business Analyst specialising in enterprise-scale analytics platforms for Fortune 500 organisations.</span><br>
+          5+ years translating complex business needs into scalable solutions with Power BI, Tableau, SQL, Python, and modern cloud data stacks. Delivered 25% faster reporting cycles, 35% higher data accuracy, 40% faster ETL pipelines, and 97% on-time delivery across critical programs.[file:109]
         </p>
         <div class="hero-stats">
           <div class="stat-item">
@@ -1134,11 +1159,15 @@
           </div>
           <div class="stat-item">
             <div class="stat-value">97%</div>
-            <div class="stat-label">Delivery Rate</div>
+            <div class="stat-label">On‑Time Delivery</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">$500K+</div>
-            <div class="stat-label">Value Unlocked</div>
+            <div class="stat-value">40%</div>
+            <div class="stat-label">Faster ETL Runtime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">25%</div>
+            <div class="stat-label">Reporting Cycle Gain</div>
           </div>
         </div>
         <div class="hero-actions">
@@ -1155,83 +1184,83 @@
   </section>
 
   <section id="achievements" class="angled fade-in">
-    <div class="section-label">Track Record</div>
-    <h2 class="section-title">Impactful Achievements & Metrics</h2>
+    <div class="section-label">Key Outcomes</div>
+    <h2 class="section-title">Impact & Scale</h2>
     <p class="section-desc">
-      Data-driven results across revenue, efficiency, and organizational transformation.
+      A snapshot of efficiency, quality, delivery, and business impact across large programmes and complex data estates.[file:109]
     </p>
     
     <div class="achievements-container">
       <div class="achievement-card">
-        <span class="achievement-badge">Financial Impact</span>
-        <div class="achievement-value">$500K+</div>
-        <div class="achievement-title">Value Unlocked</div>
-        <div class="achievement-desc">Delivered measurable revenue uplift and cost savings through predictive analytics, pricing optimisation, and portfolio performance reporting.</div>
+        <span class="achievement-badge">Efficiency</span>
+        <div class="achievement-value">25%</div>
+        <div class="achievement-title">Reporting Cycle Reduction</div>
+        <div class="achievement-desc">Cut reporting cycles from 3 to 2.25 days and eliminated 70% of manual reporting through automated BI and SQL refreshes.[file:109]</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">Performance</span>
-        <div class="achievement-value">42%</div>
-        <div class="achievement-title">Pipeline Speed Improvement</div>
-        <div class="achievement-desc">Re-engineered data pipelines and SQL workloads to cut refresh times from hours to minutes, enabling near real-time decision-making.</div>
+        <span class="achievement-badge">Pipelines</span>
+        <div class="achievement-value">40%</div>
+        <div class="achievement-title">ETL Runtime Improvement</div>
+        <div class="achievement-desc">Optimised ETL jobs and SQL workloads, improving runtime by 40% and sustaining 99.99% transaction success rates in production.[file:109]</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">AI & ML</span>
-        <div class="achievement-value">92%</div>
-        <div class="achievement-title">Model Precision</div>
-        <div class="achievement-desc">Shipped production machine learning solutions for risk and maintenance use cases with robust monitoring, versioning, and explainability.</div>
+        <span class="achievement-badge">Quality</span>
+        <div class="achievement-value">35%</div>
+        <div class="achievement-title">Data Accuracy Uplift</div>
+        <div class="achievement-desc">Established metadata and data quality standards at ingestion, reducing downstream data defects by 35% while maintaining 100% SDLC and SOX control compliance.[file:109]</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">Scale</span>
-        <div class="achievement-value">200+</div>
-        <div class="achievement-title">Active Business Users</div>
-        <div class="achievement-desc">Designed enterprise BI estates with governed semantic models, role-based access, and auditability for global stakeholder groups.</div>
+        <span class="achievement-badge">Delivery</span>
+        <div class="achievement-value">97%</div>
+        <div class="achievement-title">On‑Time Delivery</div>
+        <div class="achievement-desc">Delivered analytics and migration initiatives with 97% on‑time completion, supporting 200+ concurrent users and 150+ daily analytics consumers.[file:109]</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">Governance</span>
-        <div class="achievement-value">100%</div>
-        <div class="achievement-title">Critical Data Covered</div>
-        <div class="achievement-desc">Implemented data quality rules, lineage, and controls for SOX and HIPAA data domains, reducing reporting risk and audit issues.</div>
+        <span class="achievement-badge">Business Impact</span>
+        <div class="achievement-value">$2M+</div>
+        <div class="achievement-title">Expansion & Savings</div>
+        <div class="achievement-desc">Supported a $2M EV market expansion plan and unlocked $500K+ annual savings from predictive maintenance and reduced downtime.[file:109]</div>
       </div>
 
       <div class="achievement-card">
-        <span class="achievement-badge">Team Impact</span>
-        <div class="achievement-value">4+</div>
-        <div class="achievement-title">Analysts Mentored</div>
-        <div class="achievement-desc">Built reusable playbooks for SQL, modelling, and dashboard design adopted across analytics teams and new project workstreams.</div>
+        <span class="achievement-badge">Operations</span>
+        <div class="achievement-value">99.9%</div>
+        <div class="achievement-title">Uptime & Incident SLAs</div>
+        <div class="achievement-desc">Maintained 99.9% incident SLAs and reduced mean time to resolution by 35% via monitoring, runbooks, and root‑cause analysis.[file:109]</div>
       </div>
     </div>
   </section>
 
   <section id="about" class="fade-in">
     <div class="section-label">Profile</div>
-    <h2 class="section-title">Engineering Trust Through Data Excellence</h2>
+    <h2 class="section-title">Business‑First, Data‑Deep</h2>
     <p class="section-desc">
-      Combining business context, rigorous analytics, and production-grade implementation to turn data into decisions executives can rely on.
+      Blending BRD/FRD authoring, stakeholder workshops, and BPMN with advanced SQL, Python, and cloud platforms to deliver analytics that auditors, executives, and engineers can all trust.[file:109]
     </p>
     <div class="grid-4">
       <div class="card-feature">
-        <div class="feature-icon">∞</div>
-        <div class="feature-title">Enterprise Scale</div>
-        <div class="feature-text">Designed BI and analytics ecosystems for hundreds of concurrent users, with governed models and secure self-service exploration.</div>
+        <div class="feature-icon">BA</div>
+        <div class="feature-title">Business Analysis</div>
+        <div class="feature-text">Experienced in BRD/FRD creation, user stories, process mapping, workshops, and change management across multi‑team programmes.</div>
       </div>
       <div class="card-feature">
-        <div class="feature-icon">✓</div>
-        <div class="feature-title">Compliance First</div>
-        <div class="feature-text">Delivered HIPAA- and SOX-aligned analytics stacks with lineage, access controls, and traceable metric definitions.</div>
+        <div class="feature-icon">BI</div>
+        <div class="feature-title">Enterprise BI</div>
+        <div class="feature-text">Power BI, Tableau, and Looker solutions with semantic models, RBAC/RLS, KPI design, and executive‑ready dashboards.[file:109]</div>
       </div>
       <div class="card-feature">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Performance</div>
-        <div class="feature-text">Optimised SQL, ETL, and storage to reduce compute cost and latency while preserving accuracy and stability.</div>
+        <div class="feature-icon">⚙</div>
+        <div class="feature-title">Data Engineering</div>
+        <div class="feature-text">Azure Synapse, Azure Data Factory, AWS, Databricks, and ETL/ELT pipelines designed for reliability and observability.[file:109]</div>
       </div>
       <div class="card-feature">
-        <div class="feature-icon">AI</div>
-        <div class="feature-title">Applied ML</div>
-        <div class="feature-text">Built and deployed models for risk, demand, and maintenance with full MLOps lifecycle and stakeholder-friendly outputs.</div>
+        <div class="feature-icon">Gx</div>
+        <div class="feature-title">Governance & Compliance</div>
+        <div class="feature-text">Data lineage, cataloguing, quality rules, and controls for SOX, HIPAA, AML, and SDLC, supporting clean audits and control coverage.[file:109]</div>
       </div>
     </div>
   </section>
@@ -1240,27 +1269,46 @@
     <div class="section-label">Career Timeline</div>
     <h2 class="section-title">Professional Experience</h2>
     <p class="section-desc">
-      End-to-end analytics delivery across financial services, healthcare, and digital commerce.
+      Roles spanning healthcare, financial services, consulting, and fintech, with consistent focus on analytics, governance, and delivery.[file:109]
     </p>
     <div class="experience-list">
       <div class="exp-item">
         <div class="exp-header">
           <div>
             <div class="exp-title">Senior Business Analyst</div>
-            <div class="exp-role">Financial Services</div>
+            <div class="exp-role">CVS Health · Los Angeles, CA</div>
           </div>
-          <div class="exp-period">2022 - Present</div>
+          <div class="exp-period">Feb 2025 – Present</div>
         </div>
         <p class="exp-desc">
-          Led BI modernisation for executive and regulatory reporting. Defined metrics, modelled warehouse views, and delivered dashboards used by leadership and operations daily.
+          Designed and rolled out a data ingestion and reporting platform for 200+ concurrent users with role‑based Power BI dashboards and automated data quality checks, cutting reporting turnaround by 25%. Established metadata and data quality standards that reduced downstream defects by 35% while maintaining 100% SDLC and SOX compliance across 12 key controls.[file:109]
         </p>
         <div class="exp-skills">
           <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">SQL Server</span>
-          <span class="skill-tag">DAX</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">Data Governance</span>
-          <span class="skill-tag">ETL</span>
+          <span class="skill-tag">Azure Synapse</span>
+          <span class="skill-tag">Data Quality</span>
+          <span class="skill-tag">SOX</span>
+          <span class="skill-tag">Incident Analytics</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Systems Business Analyst</div>
+            <div class="exp-role">DXC Technology · Remote</div>
+          </div>
+          <div class="exp-period">Jun 2024 – Dec 2024</div>
+        </div>
+        <p class="exp-desc">
+          Led requirements and data flow design for an Azure Synapse migration, defining SLAs, data contracts, and lineage to de‑risk a multi‑million‑dollar modernisation. Built an end‑to‑end data quality framework with SQL Server DQS and Python validators, cutting issues by 35% and improving query performance by 40% while raising on‑time delivery to 97%.[file:109]
+        </p>
+        <div class="exp-skills">
+          <span class="skill-tag">Azure Synapse</span>
+          <span class="skill-tag">Azure Data Factory</span>
+          <span class="skill-tag">SQL Server DQS</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SLAs</span>
         </div>
       </div>
 
@@ -1268,41 +1316,39 @@
         <div class="exp-header">
           <div>
             <div class="exp-title">Business Analyst</div>
-            <div class="exp-role">Healthcare Analytics</div>
+            <div class="exp-role">Infosys BPM · Hyderabad, India</div>
           </div>
-          <div class="exp-period">2021 - 2022</div>
+          <div class="exp-period">Jul 2021 – Aug 2023</div>
         </div>
         <p class="exp-desc">
-          Built patient risk stratification and utilisation reporting. Partnered with clinicians to align features with outcomes and translated insights into actionable workflows.
+          Delivered six enterprise BI dashboards in Power BI and Tableau with automated SQL refresh, eliminating 70% of manual reporting and saving 18+ hours per month while enabling 150+ daily self‑service users. Analysed 500K+ procurement records with advanced SQL to identify payment‑delay drivers, improving decision speed by 30% and forecast accuracy by 25%.[file:109]
         </p>
         <div class="exp-skills">
-          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Power BI</span>
           <span class="skill-tag">Tableau</span>
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">XGBoost</span>
-          <span class="skill-tag">Healthcare Data</span>
-          <span class="skill-tag">HIPAA</span>
+          <span class="skill-tag">Advanced SQL</span>
+          <span class="skill-tag">Procurement Analytics</span>
+          <span class="skill-tag">Informatica</span>
         </div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Data Analyst</div>
-            <div class="exp-role">E-Commerce</div>
+            <div class="exp-title">Junior Business Analyst</div>
+            <div class="exp-role">TatvaSoft · Hyderabad, India</div>
           </div>
-          <div class="exp-period">2020 - 2021</div>
+          <div class="exp-period">Jan 2020 – Jun 2021</div>
         </div>
         <p class="exp-desc">
-          Owned sales and inventory analytics across millions of transactions. Created automated reporting and forecasting that guided merchandising and marketing decisions.
+          Produced BRDs and FRDs for a fintech loan management system with 60+ functional requirements and API‑first microservices, supporting an on‑time launch handling 50K+ daily transactions. Optimised ETL jobs and Informatica workflows to cut runtime by 40% and maintain 99.99% transaction success while documenting BPMN processes and Jira automation to reduce change cycle time by 30%.[file:109]
         </p>
         <div class="exp-skills">
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Tableau</span>
-          <span class="skill-tag">ETL</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Data Pipelines</span>
-          <span class="skill-tag">Analytics</span>
+          <span class="skill-tag">BRD / FRD</span>
+          <span class="skill-tag">Fintech</span>
+          <span class="skill-tag">Informatica</span>
+          <span class="skill-tag">BPMN</span>
+          <span class="skill-tag">Jira</span>
         </div>
       </div>
     </div>
@@ -1310,86 +1356,83 @@
 
   <section id="process" class="fade-in">
     <div class="section-label">Methodology</div>
-    <h2 class="section-title">A Repeatable Analytics Delivery Framework</h2>
+    <h2 class="section-title">How Projects Move from Idea to Impact</h2>
     <p class="section-desc">
-      Structured, collaborative delivery from discovery to scale, tuned for executive stakeholders and technical teams.
+      Grounded in Agile and Scrum, with clear artefacts, SLAs, and controls from discovery through to production and audit support.[file:109]
     </p>
     <div class="steps">
       <div class="step-card">
         <div class="step-number">01</div>
         <div class="step-title">Discover</div>
-        <div class="step-text">Clarify business goals, stakeholders, KPIs, data sources, and constraints before writing a single query.</div>
+        <div class="step-text">Run stakeholder workshops to capture BRDs, user stories, KPIs, compliance requirements, and current‑state data flows.</div>
       </div>
       <div class="step-card">
         <div class="step-number">02</div>
         <div class="step-title">Design</div>
-        <div class="step-text">Shape data models, semantic layers, and governance with long-term maintainability and self-service in mind.</div>
+        <div class="step-text">Define target‑state architecture, semantic models, data contracts, DQ rules, and SLAs aligned to business outcomes.</div>
       </div>
       <div class="step-card">
         <div class="step-number">03</div>
         <div class="step-title">Build</div>
-        <div class="step-text">Implement pipelines, calculations, and visual experiences with tests, documentation, and version control.</div>
+        <div class="step-text">Implement ETL/ELT, dashboards, and models with version control, testing, and SDLC control evidence captured.</div>
       </div>
       <div class="step-card">
         <div class="step-number">04</div>
         <div class="step-title">Scale</div>
-        <div class="step-text">Handover with training, monitoring, and runbooks so teams can trust and extend the solution.</div>
+        <div class="step-text">Deploy monitoring, incident playbooks, and documentation to keep uptime high and audits clean over the long term.</div>
       </div>
     </div>
   </section>
 
   <section id="projects" class="angled fade-in">
-    <div class="section-label">Selected Work</div>
-    <h2 class="section-title">Analytics & ML in Production</h2>
+    <div class="section-label">Selected Projects</div>
+    <h2 class="section-title">Analytics & ML Case Studies</h2>
     <p class="section-desc">
-      A sample of projects showing how raw data was turned into decisions, savings, and new opportunities.
+      A closer look at three end‑to‑end projects from your resume that combine modelling, governance, and business impact.[file:109]
     </p>
     <div class="projects">
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">Python • XGBoost • SQL</span>
-          <h3 class="project-title">Healthcare Risk Model</h3>
-          <div class="project-metric">85% AUC-PR</div>
-          <p class="project-desc">Scored patient readmission risk using clinical, demographic, and utilisation data to prioritise interventions.</p>
+          <span class="project-tag">XGBoost · Healthcare</span>
+          <h3 class="project-title">Healthcare Readmission Prediction</h3>
+          <div class="project-metric">85% AUC‑PR · 200+ readmissions avoided yearly</div>
+          <p class="project-desc">Built a readmission risk model on 100K+ clinical records to flag high‑risk patients and support targeted interventions.[file:109]</p>
           <ul class="project-list">
-            <li>Secured HIPAA-compliant data flows with encryption and least-privilege access.</li>
-            <li>Calibrated thresholds with clinicians to balance sensitivity and workload.</li>
-            <li>Exposed predictions in intuitive ward-level dashboards and worklists.</li>
-            <li>Contributed to a measurable drop in 30-day readmissions.</li>
+            <li>Used XGBoost with feature engineering on clinical, demographic, and utilisation data.</li>
+            <li>Flagged 15% of patients as high risk, supporting an estimated 200+ readmissions prevented annually.[file:109]</li>
+            <li>Implemented HIPAA‑aligned governance with AES‑256 PHI encryption, role‑based access, and audited lineage.</li>
+            <li>Passed compliance review with zero issues and handed over clear documentation to clinical teams.[file:109]</li>
           </ul>
-          <a href="https://github.com" class="btn-ghost" target="_blank">View Notebook →</a>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">Analytics • Python • Power BI</span>
-          <h3 class="project-title">EV Market Expansion</h3>
-          <div class="project-metric">35% Premium</div>
-          <p class="project-desc">Ranked US markets for EV roll-out by combining demand signals, infrastructure, and competitive intelligence.</p>
+          <span class="project-tag">Market Analytics · Strategy</span>
+          <h3 class="project-title">EV Adoption Market Analysis</h3>
+          <div class="project-metric">$2M market expansion approved</div>
+          <p class="project-desc">Analysed EV adoption across 2,000+ US counties, identifying drivers and prioritising high‑potential markets.[file:109]</p>
           <ul class="project-list">
-            <li>Unified 12+ public and internal datasets into a clean analytical layer.</li>
-            <li>Modelled multiple growth scenarios and unit economics by region.</li>
-            <li>Built executive views with map drill-downs and sensitivity toggles.</li>
-            <li>Influenced capital deployment into highest-lift geographies.</li>
+            <li>Identified the top five demand drivers and a 35% adoption premium in tier‑1 markets.[file:109]</li>
+            <li>Summarised findings in a 12‑slide executive deck with KPIs and scenario modelling.</li>
+            <li>Provided recommendations that supported approval of a $2M expansion plan.</li>
+            <li>Linked analytics directly to capital allocation and go‑to‑market strategy decisions.</li>
           </ul>
-          <a href="https://powerbi.com" class="btn-ghost" target="_blank">View Dashboard →</a>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-content">
-          <span class="project-tag">Time-Series • Databricks • MLOps</span>
-          <h3 class="project-title">Predictive Maintenance</h3>
-          <div class="project-metric">92% Precision</div>
-          <p class="project-desc">Used streaming sensor data to anticipate equipment failures and schedule interventions before downtime.</p>
+          <span class="project-tag">Time‑Series · Manufacturing</span>
+          <h3 class="project-title">Predictive Maintenance for Manufacturing</h3>
+          <div class="project-metric">$500K+ annual savings</div>
+          <p class="project-desc">Developed a time‑series model on 10M+ sensor readings to predict failures 14 days in advance with 92% precision.[file:109]</p>
           <ul class="project-list">
-            <li>Ingested and featurised tens of thousands of events per second.</li>
-            <li>Deployed models with monitoring on drift, performance, and coverage.</li>
-            <li>Integrated alerts into existing operations tooling and processes.</li>
-            <li>Protected revenue by reducing critical unplanned outages.</li>
+            <li>Reduced unplanned downtime by 22% for critical equipment fleets.[file:109]</li>
+            <li>Documented a full model card and escalation runbook for operations ownership.</li>
+            <li>Implemented monitoring for drift, performance, and coverage metrics.</li>
+            <li>Unlocked $500K+ annual savings and made maintenance planning proactive.[file:109]</li>
           </ul>
-          <a href="https://databricks.com" class="btn-ghost" target="_blank">View Architecture →</a>
         </div>
       </div>
     </div>
@@ -1397,106 +1440,121 @@
 
   <section id="skills" class="fade-in">
     <div class="section-label">Technical Arsenal</div>
-    <h2 class="section-title">Skills & Expertise</h2>
+    <h2 class="section-title">Skills & Tools</h2>
     <p class="section-desc">
-      Tools and platforms used frequently to design, build, and ship analytics solutions.
+      The analytics, engineering, and governance stack used most frequently across recent roles and projects.[file:109]
     </p>
     <div class="skills-container">
       <div class="skill-category">
-        <div class="skill-cat-title">BI & Analytics</div>
+        <div class="skill-cat-title">Analytics & BI</div>
         <div class="skill-list">
-          <span class="skill-item">Power BI (Expert)</span>
-          <span class="skill-item">Tableau (Advanced)</span>
+          <span class="skill-item">Power BI (DAX, semantic models, RLS)</span>
+          <span class="skill-item">Tableau</span>
           <span class="skill-item">Looker</span>
-          <span class="skill-item">DAX</span>
-          <span class="skill-item">Qlik</span>
-          <span class="skill-item">Excel / VBA</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-cat-title">Data Engineering</div>
-        <div class="skill-list">
-          <span class="skill-item">Python</span>
           <span class="skill-item">SQL Server</span>
           <span class="skill-item">PostgreSQL</span>
-          <span class="skill-item">Apache Spark</span>
-          <span class="skill-item">ETL / ELT</span>
-          <span class="skill-item">Data Modelling</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Machine Learning</div>
+        <div class="skill-cat-title">Python & ML</div>
         <div class="skill-list">
-          <span class="skill-item">Scikit-learn</span>
+          <span class="skill-item">Python (pandas, NumPy)</span>
+          <span class="skill-item">scikit‑learn</span>
           <span class="skill-item">XGBoost</span>
-          <span class="skill-item">TensorFlow</span>
-          <span class="skill-item">Predictive Analytics</span>
-          <span class="skill-item">Time-Series</span>
-          <span class="skill-item">Model Deployment</span>
+          <span class="skill-item">Matplotlib</span>
+          <span class="skill-item">Seaborn</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Cloud Platforms</div>
+        <div class="skill-cat-title">Cloud & Data</div>
         <div class="skill-list">
-          <span class="skill-item">Azure</span>
-          <span class="skill-item">AWS</span>
-          <span class="skill-item">Google Cloud</span>
+          <span class="skill-item">Azure Synapse</span>
+          <span class="skill-item">Azure Data Factory</span>
+          <span class="skill-item">AWS (EC2, S3, RDS, Glue)</span>
           <span class="skill-item">Databricks</span>
-          <span class="skill-item">Snowflake</span>
-          <span class="skill-item">Redshift</span>
+          <span class="skill-item">Data Warehouse Design</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Development</div>
+        <div class="skill-cat-title">Governance</div>
         <div class="skill-list">
-          <span class="skill-item">Git / GitHub</span>
-          <span class="skill-item">Jupyter</span>
-          <span class="skill-item">VS Code</span>
-          <span class="skill-item">Docker</span>
-          <span class="skill-item">CI / CD</span>
-          <span class="skill-item">Linux</span>
+          <span class="skill-item">Data lineage & catalogues</span>
+          <span class="skill-item">Metadata standards</span>
+          <span class="skill-item">SOX · HIPAA · AML</span>
+          <span class="skill-item">Data quality rules</span>
+          <span class="skill-item">Audit readiness</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <div class="skill-cat-title">Specialisations</div>
+        <div class="skill-cat-title">Delivery & Tools</div>
         <div class="skill-list">
-          <span class="skill-item">Data Governance</span>
-          <span class="skill-item">Data Quality</span>
-          <span class="skill-item">HIPAA</span>
-          <span class="skill-item">SOX</span>
-          <span class="skill-item">Business Analysis</span>
-          <span class="skill-item">Strategy</span>
+          <span class="skill-item">Agile / Scrum</span>
+          <span class="skill-item">Jira · Confluence</span>
+          <span class="skill-item">Azure DevOps</span>
+          <span class="skill-item">BPMN · Visio</span>
+          <span class="skill-item">Informatica · Collibra</span>
+          <span class="skill-item">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title">Core Strengths</div>
+        <div class="skill-list">
+          <span class="skill-item">Requirements & stakeholder management</span>
+          <span class="skill-item">Incident analytics</span>
+          <span class="skill-item">Regulatory compliance</span>
+          <span class="skill-item">Sprint metrics & risk mitigation</span>
+          <span class="skill-item">Executive communication</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="certifications" class="angled fade-in">
-    <div class="section-label">Credentials</div>
-    <h2 class="section-title">Certifications & Recognition</h2>
+  <section id="education" class="angled fade-in">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education & Certifications</h2>
     <p class="section-desc">
-      External validation of skills across analytics, cloud, and applied machine learning.
+      Formal training in business analytics, commerce, and continuous upskilling through industry certifications.[file:109]
     </p>
+
+    <div class="education-grid">
+      <div class="edu-card">
+        <div class="edu-title">Master of Business Analytics</div>
+        <div class="edu-meta">Sacred Heart University · Fairfield, CT · May 2024</div>
+        <div class="edu-detail">GPA: 3.7 / 4.0 · Coursework in Data Strategy, BI Systems, Predictive Analytics, Data Governance, Advanced SQL, and Python.[file:109]</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-title">Bachelor of Commerce in Computer Applications</div>
+        <div class="edu-meta">Jagruthi Degree & PG College · Hyderabad, India · Jun 2021</div>
+        <div class="edu-detail">GPA: 3.0 / 4.0 · Foundation in commerce, computing, and applied business technology.[file:109]</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:24px;">Certifications</div>
     <div class="certifications">
       <div class="cert-badge">
         <div class="cert-icon">📊</div>
-        <div class="cert-title">Microsoft Certified</div>
-        <div class="cert-issuer">Data Analyst (Power BI)</div>
+        <div class="cert-title">Power BI Data Analyst Associate (PL‑300)</div>
+        <div class="cert-issuer">Microsoft · 2024[file:109]</div>
       </div>
       <div class="cert-badge">
-        <div class="cert-icon">☁️</div>
-        <div class="cert-title">AWS Certified</div>
-        <div class="cert-issuer">Solutions Architect Associate</div>
+        <div class="cert-icon">📝</div>
+        <div class="cert-title">Business Analysis: Essential Tools & Techniques</div>
+        <div class="cert-issuer">IIBA‑aligned · 2023[file:109]</div>
       </div>
       <div class="cert-badge">
-        <div class="cert-icon">🤖</div>
-        <div class="cert-title">Machine Learning</div>
-        <div class="cert-issuer">TensorFlow & Advanced Analytics</div>
+        <div class="cert-icon">⚡</div>
+        <div class="cert-title">Agile and Scrum Framework</div>
+        <div class="cert-issuer">Certification · 2022[file:109]</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon">📈</div>
+        <div class="cert-title">Google Data Analytics</div>
+        <div class="cert-issuer">Professional Certificate (in progress, expected 2026)[file:109]</div>
       </div>
     </div>
   </section>
@@ -1505,7 +1563,7 @@
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let’s Talk About Your Data</h2>
     <p class="section-desc">
-      Share a bit about your use case, stack, and timelines. A concise response with clear next steps will follow.
+      Share your use case, data landscape, and timelines. A concise response with options and next steps will follow quickly.[file:109]
     </p>
     <div class="contact-box">
       <form id="contact-form" onsubmit="handleFormSubmit(event)">
@@ -1538,21 +1596,21 @@
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon" onclick="openLink('https://linkedin.com/in/hrushikesh-singh')">in</div>
+          <div class="contact-icon" onclick="openLink('https://linkedin.com')">in</div>
           <div class="contact-content">
             <div class="contact-label">LinkedIn</div>
-            <div class="contact-value" onclick="openLink('https://linkedin.com/in/hrushikesh-singh')">linkedin.com/in/hrushikesh-singh</div>
+            <div class="contact-value" onclick="openLink('https://linkedin.com')">LinkedIn profile on request</div>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon" onclick="openLink('https://github.com/hrushikesh-singh')">GH</div>
+          <div class="contact-icon" onclick="openLink('https://github.com')">GH</div>
           <div class="contact-content">
             <div class="contact-label">GitHub</div>
-            <div class="contact-value" onclick="openLink('https://github.com/hrushikesh-singh')">github.com/hrushikesh-singh</div>
+            <div class="contact-value" onclick="openLink('https://github.com')">GitHub portfolio on request</div>
           </div>
         </div>
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-top:16px;border-top:1px solid rgba(212,175,55,0.22);padding-top:16px;">
-          Comfortable working across Python, SQL, Power BI, Tableau, Azure, AWS, Databricks, and Snowflake. Open to consulting, full-time roles, and collaborations.
+          Los Angeles, CA · Open to remote and hybrid roles across the US. Available for full‑time roles and selective consulting engagements.[file:109]
         </p>
       </div>
     </div>
@@ -1560,12 +1618,11 @@
 </main>
 
 <footer>
-  <span>© 2025 Hrushikesh Singh · Senior Analytics Professional</span>
+  <span>© 2025 Hrushikesh Singh Bondili · Senior Business & Data Analyst</span>
   <span>Built with HTML, CSS & JavaScript</span>
 </footer>
 
 <script>
-  // particles
   function createParticles(){
     const particlesContainer = document.querySelector('.particles');
     for(let i = 0; i < 40; i++){
@@ -1579,7 +1636,6 @@
     }
   }
 
-  // floating nodes
   function createNodes(){
     const layer = document.querySelector('.nodes-layer');
     const nodePositions = [
@@ -1594,7 +1650,8 @@
       Object.assign(n.style,pos);
       const ring = document.createElement('div');
       ring.className = 'data-node-ring';
-      ring.style.top = `calc(${pos.top || pos.bottom} - 30px)`;
+      ring.style.top = pos.top ? `calc(${pos.top} - 30px)` : '';
+      ring.style.bottom = pos.bottom ? `calc(${pos.bottom} - 30px)` : '';
       if(pos.left) ring.style.left = `calc(${pos.left} - 30px)`;
       if(pos.right) ring.style.right = `calc(${pos.right} - 30px)`;
       ring.style.animation = `nodePulse ${8 + idx}s ease-in-out infinite`;
@@ -1624,7 +1681,6 @@
     document.head.appendChild(nodeStyle);
   }
 
-  // heatmap clusters
   function fillClusters(){
     document.querySelectorAll('.cluster-grid').forEach((grid)=>{
       for(let i=0;i<30;i++){
@@ -1639,7 +1695,6 @@
   createNodes();
   fillClusters();
 
-  // nav highlight
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -1660,7 +1715,6 @@
   );
   sections.forEach((sec) => sectionObserver.observe(sec));
 
-  // fade-in
   const fades = document.querySelectorAll(".fade-in");
   const fadeObserver = new IntersectionObserver(
     (entries) => {
@@ -1675,7 +1729,6 @@
   );
   fades.forEach((el) => fadeObserver.observe(el));
 
-  // form
   function handleFormSubmit(e){
     e.preventDefault();
     const name = document.getElementById("name").value.trim() || "there";
@@ -1692,7 +1745,6 @@
     }, 3500);
   }
 
-  // helpers
   function copyToClipboard(text){
     navigator.clipboard.writeText(text).then(() => {
       alert('Email copied to clipboard.');
@@ -1705,10 +1757,9 @@
     window.open(url, '_blank');
   }
   function downloadResume(){
-    alert('Resume download link: /documents/Hrushikesh_Singh_Resume.pdf');
+    alert('Resume download link: /documents/Hrushi-ResumeORG.pdf');
   }
 
-  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e){
       e.preventDefault();
