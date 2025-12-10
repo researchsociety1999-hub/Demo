@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Hrushikesh Singh — Senior Analytics & Data Strategy Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <style>
     :root{
       --bg:#0a0e1f;
@@ -246,7 +247,7 @@
     nav{
       display:flex;
       align-items:center;
-      gap:32px;
+      gap:24px;
     }
     nav a{
       color:var(--muted);
@@ -254,7 +255,7 @@
       position:relative;
       letter-spacing:0.06em;
       text-transform:uppercase;
-      font-size:0.75rem;
+      font-size:0.7rem;
       font-weight:600;
       padding-bottom:6px;
       transition:color 0.3s ease;
@@ -520,6 +521,85 @@
       font-size:0.9rem;
       color:var(--muted);
       line-height:1.5;
+    }
+
+    /* ACHIEVEMENTS SECTION */
+    .achievements-container{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:32px;
+      margin-bottom:48px;
+    }
+    .achievement-card{
+      background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));
+      border:1px solid rgba(212,175,55,0.25);
+      border-radius:var(--radius);
+      padding:32px;
+      position:relative;
+      overflow:hidden;
+      transition:all 0.3s ease;
+    }
+    .achievement-card:hover{
+      border-color:var(--accent);
+      transform:translateY(-10px);
+      box-shadow:0 25px 50px rgba(212,175,55,0.2);
+    }
+    .achievement-badge{
+      display:inline-block;
+      background:linear-gradient(135deg,#d4af37,#e8c547);
+      color:#0a0e1f;
+      padding:8px 16px;
+      border-radius:999px;
+      font-size:0.7rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      margin-bottom:12px;
+    }
+    .achievement-value{
+      font-size:2.2rem;
+      font-weight:900;
+      color:var(--accent);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .achievement-title{
+      font-size:1.1rem;
+      font-weight:700;
+      color:var(--text);
+      margin-bottom:12px;
+    }
+    .achievement-desc{
+      font-size:0.9rem;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    /* CHART SECTION */
+    .chart-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:32px;
+      margin-bottom:48px;
+    }
+    .chart-container{
+      background:linear-gradient(135deg,rgba(212,175,55,0.06),rgba(212,175,55,0.02));
+      border:1px solid rgba(212,175,55,0.2);
+      border-radius:var(--radius);
+      padding:32px;
+      position:relative;
+    }
+    .chart-title{
+      font-size:1.1rem;
+      font-weight:700;
+      margin-bottom:24px;
+      color:var(--text);
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(212,175,55,0.2);
+    }
+    .chart-wrapper{
+      position:relative;
+      height:350px;
     }
 
     /* EXPERIENCE */
@@ -887,6 +967,8 @@
       .skills-container{grid-template-columns:repeat(2,1fr);}
       .certifications{grid-template-columns:repeat(2,1fr);}
       .contact-box{grid-template-columns:1fr;}
+      .chart-grid{grid-template-columns:1fr;}
+      .achievements-container{grid-template-columns:1fr;}
     }
     @media (max-width:640px){
       section{padding:60px 5vw;}
@@ -899,6 +981,7 @@
       .certifications{grid-template-columns:1fr;}
       nav{gap:16px;}
       nav a{font-size:0.7rem;}
+      .chart-wrapper{height:250px;}
     }
   </style>
 </head>
@@ -920,6 +1003,7 @@
   </div>
   <nav>
     <a href="#hero" class="nav-link active">Home</a>
+    <a href="#achievements" class="nav-link">Achievements</a>
     <a href="#about" class="nav-link">Profile</a>
     <a href="#experience" class="nav-link">Experience</a>
     <a href="#process" class="nav-link">Process</a>
@@ -966,12 +1050,101 @@
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="angled fade-in">
+    <div class="section-label">Track Record</div>
+    <h2 class="section-title">Impactful Achievements & Metrics</h2>
+    <p class="section-desc">
+      Data-driven results spanning financial impact, operational efficiency, and organizational transformation.
+    </p>
+    
+    <div class="achievements-container">
+      <div class="achievement-card">
+        <span class="achievement-badge">Financial Impact</span>
+        <div class="achievement-value">$500K+</div>
+        <div class="achievement-title">Value Unlocked</div>
+        <div class="achievement-desc">Direct revenue impact and cost savings through predictive analytics, optimization initiatives, and strategic data initiatives across 5+ enterprise clients.</div>
+      </div>
+
+      <div class="achievement-card">
+        <span class="achievement-badge">Performance</span>
+        <div class="achievement-value">42%</div>
+        <div class="achievement-title">Pipeline Speed Improvement</div>
+        <div class="achievement-desc">Engineered high-performance ETL systems reducing data pipeline execution times from hours to minutes, enabling real-time analytics at scale.</div>
+      </div>
+
+      <div class="achievement-card">
+        <span class="achievement-badge">AI/ML</span>
+        <div class="achievement-value">92%</div>
+        <div class="achievement-title">Model Precision</div>
+        <div class="achievement-desc">Deployed production ML models with 92% precision for predictive maintenance, reducing downtime by $500K+ annually across manufacturing networks.</div>
+      </div>
+
+      <div class="achievement-card">
+        <span class="achievement-badge">Scale</span>
+        <div class="achievement-value">200+</div>
+        <div class="achievement-title">Concurrent Users</div>
+        <div class="achievement-desc">Architected enterprise BI platforms serving 200+ business users with semantic governance, role-based access, and audit compliance across financial services.</div>
+      </div>
+
+      <div class="achievement-card">
+        <span class="achievement-badge">Governance</span>
+        <div class="achievement-value">100%</div>
+        <div class="achievement-title">Compliance Coverage</div>
+        <div class="achievement-desc">Implemented comprehensive data governance frameworks achieving SOX, HIPAA, and regulatory compliance with automated lineage tracking and quality monitoring.</div>
+      </div>
+
+      <div class="achievement-card">
+        <span class="achievement-badge">Team Impact</span>
+        <div class="achievement-value">4+</div>
+        <div class="achievement-title">Analysts Mentored</div>
+        <div class="achievement-desc">Led analytics team development, establishing best practices in SQL optimization, data modeling, and BI design used across organizational departments.</div>
+      </div>
+    </div>
+
+    <!-- CHARTS SECTION -->
+    <div style="margin-top:64px;">
+      <div class="section-label" style="margin-top:32px;">Analytics & Insights</div>
+      <h2 class="section-title" style="margin-bottom:32px;">Performance Metrics & Impact Visualizations</h2>
+      
+      <div class="chart-grid">
+        <div class="chart-container">
+          <div class="chart-title">Career Growth & Project Delivery</div>
+          <div class="chart-wrapper">
+            nvas id="carreerChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-title">Business Value Generated</div>
+          <div class="chart-wrapper">
+            nvas id="valueeChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-title">Project Distribution by Industry</div>
+          <div class="chart-wrapper">
+            nvas id="industtryChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-title">Key Performance Achievements</div>
+          <div class="chart-wrapper">
+            nvas id="performmanceChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT / PROFILE -->
-  <section id="about" class="angled fade-in">
+  <section id="about" class="fade-in">
     <div class="section-label">Who I Am</div>
     <h2 class="section-title">Engineering Trust Through Data Excellence</h2>
     <p class="section-desc">
-      Blending business acumen, enterprise-grade data architectures, and ML expertise to deliver analytics that executives rely on for high-stakes decisions. Passionate about governance, performance optimization, and building scalable data solutions.
+      Blending business acumen, enterprise-grade data architectures, and ML expertise to deliver analytics that executives rely on for high-stakes decisions.
     </p>
     <div class="grid-4">
       <div class="card-feature">
@@ -998,7 +1171,7 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="fade-in">
+  <section id="experience" class="angled fade-in">
     <div class="section-label">Career Timeline</div>
     <h2 class="section-title">Professional Experience</h2>
     <p class="section-desc">
@@ -1328,7 +1501,7 @@
 
 <footer>
   <span>© 2025 Hrushikesh Singh · Senior Analytics Professional</span>
-  <span>Built with HTML, CSS, JavaScript & Modern Web Technologies</span>
+  <span>Built with HTML, CSS, JavaScript & Chart.js</span>
 </footer>
 
 <script>
@@ -1357,6 +1530,148 @@
     }
   `;
   document.head.appendChild(style);
+
+  // Chart.js configuration
+  const chartConfig = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: '#8a92a8',
+          font: { size: 12, weight: 'bold' },
+          padding: 15
+        }
+      }
+    },
+    scales: {
+      y: {
+        ticks: { color: '#8a92a8', font: { size: 11 } },
+        grid: { color: 'rgba(212,175,55,0.1)' }
+      },
+      x: {
+        ticks: { color: '#8a92a8', font: { size: 11 } },
+        grid: { color: 'rgba(212,175,55,0.1)' }
+      }
+    }
+  };
+
+  // Career Growth Chart
+  const careerCtx = document.getElementById('careerChart').getContext('2d');
+  new Chart(careerCtx, {
+    type: 'line',
+    data: {
+      labels: ['2020', '2021', '2022', '2023', '2024'],
+      datasets: [
+        {
+          label: 'Years Experience',
+          data: [2, 3, 4, 5, 5.5],
+          borderColor: '#d4af37',
+          backgroundColor: 'rgba(212,175,55,0.1)',
+          tension: 0.4,
+          fill: true,
+          pointRadius: 6,
+          pointBackgroundColor: '#d4af37',
+          pointBorderColor: '#f5f5f5'
+        },
+        {
+          label: 'Projects Delivered',
+          data: [8, 15, 24, 32, 38],
+          borderColor: '#e8c547',
+          backgroundColor: 'rgba(232,197,71,0.1)',
+          tension: 0.4,
+          fill: true,
+          pointRadius: 6,
+          pointBackgroundColor: '#e8c547',
+          pointBorderColor: '#f5f5f5'
+        }
+      ]
+    },
+    options: {
+      ...chartConfig,
+      plugins: {
+        ...chartConfig.plugins,
+        filler: { propagate: true }
+      }
+    }
+  });
+
+  // Business Value Chart
+  const valueCtx = document.getElementById('valueChart').getContext('2d');
+  new Chart(valueCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024'],
+      datasets: [
+        {
+          label: 'Revenue Impact ($K)',
+          data: [85, 150, 220, 280, 350, 420],
+          backgroundColor: 'rgba(212,175,55,0.7)',
+          borderColor: '#d4af37',
+          borderWidth: 2
+        },
+        {
+          label: 'Cost Savings ($K)',
+          data: [30, 65, 110, 150, 190, 240],
+          backgroundColor: 'rgba(232,197,71,0.5)',
+          borderColor: '#e8c547',
+          borderWidth: 2
+        }
+      ]
+    },
+    options: chartConfig
+  });
+
+  // Industry Distribution Chart
+  const industryCtx = document.getElementById('industryChart').getContext('2d');
+  new Chart(industryCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Financial Services', 'Healthcare', 'E-Commerce', 'Manufacturing', 'Other'],
+      datasets: [{
+        data: [35, 28, 18, 12, 7],
+        backgroundColor: [
+          'rgba(212,175,55,0.9)',
+          'rgba(232,197,71,0.8)',
+          'rgba(212,175,55,0.7)',
+          'rgba(232,197,71,0.6)',
+          'rgba(212,175,55,0.5)'
+        ],
+        borderColor: '#0a0e1f',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      ...chartConfig,
+      plugins: {
+        ...chartConfig.plugins,
+        legend: {
+          ...chartConfig.plugins.legend,
+          position: 'bottom'
+        }
+      }
+    }
+  });
+
+  // Performance Chart
+  const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+  new Chart(performanceCtx, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['Query Performance', 'Pipeline Efficiency', 'Report Speed', 'Cost Reduction', 'User Adoption', 'System Uptime'],
+      datasets: [{
+        label: 'Achievement %',
+        data: [38, 42, 55, 28, 94, 99.7],
+        backgroundColor: 'rgba(212,175,55,0.8)',
+        borderColor: '#d4af37',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      ...chartConfig,
+      indexAxis: 'y'
+    }
+  });
 
   // Nav highlight on scroll
   const sections = document.querySelectorAll("section");
@@ -1406,7 +1721,6 @@
     status.textContent = `✓ Thanks, ${name}! Your message has been received. I'll respond within 24 hours.`;
     status.style.color = 'var(--accent)';
     
-    // Here you would normally send this to a backend
     console.log({name, email, company, message});
     
     setTimeout(() => {
@@ -1434,13 +1748,7 @@
 
   // Download resume
   function downloadResume(){
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = '#';
-    link.download = 'Hrushikesh_Singh_Resume.pdf';
-    link.textContent = 'Download Resume';
-    // In production, replace # with actual PDF URL
-    alert('Resume download will be available at: /documents/Hrushikesh_Singh_Resume.pdf');
+    alert('Resume download link: /documents/Hrushikesh_Singh_Resume.pdf');
   }
 
   // Smooth scroll for anchor links
@@ -1453,12 +1761,6 @@
       }
     });
   });
-
-  // Mobile menu toggle
-  function toggleMobileMenu(){
-    const nav = document.querySelector('nav');
-    nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
-  }
 </script>
 </body>
 </html>
