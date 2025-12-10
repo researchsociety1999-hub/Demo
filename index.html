@@ -67,7 +67,6 @@
       50%{opacity:0.7;}
     }
 
-    /* ANIMATED 3D MESH RIBBON CONTAINER */
     .mesh-container{
       position:fixed;
       inset:0;
@@ -75,8 +74,6 @@
       z-index:-3;
       overflow:hidden;
     }
-
-    /* PRIMARY FLOWING MESH RIBBONS */
     .mesh-ribbon{
       position:absolute;
       width:200%;
@@ -145,7 +142,6 @@
       clip-path:polygon(0 30%,100% 20%,100% 80%,0 70%);
       animation:ribbon5 20s ease-in-out infinite;
     }
-
     .mesh-6{
       top:15%;
       left:-50%;
@@ -205,7 +201,6 @@
       filter:blur(45px);
     }
 
-    /* GEOMETRIC WIREFRAME PATTERNS - SOFT */
     .wireframe-pattern{
       position:absolute;
       mix-blend-mode:screen;
@@ -318,7 +313,6 @@
       100%{transform:rotate(360deg);}
     }
 
-    /* PARTICLE EFFECT */
     .particles{
       position:fixed;
       inset:0;
@@ -335,7 +329,6 @@
       box-shadow:0 0 10px rgba(212,175,55,0.8);
     }
 
-    /* NOISE TEXTURE */
     .noise{
       position:fixed;
       inset:-20px;
@@ -448,7 +441,6 @@
       scroll-margin-top:90px;
     }
 
-    /* HERO */
     .hero{
       display:grid;
       grid-template-columns:1.2fr 1fr;
@@ -585,7 +577,6 @@
       100%{transform:scale(0.7) rotate(360deg);}
     }
 
-    /* SECTION STYLING */
     .section-label{
       text-transform:uppercase;
       letter-spacing:0.12em;
@@ -666,7 +657,6 @@
       line-height:1.5;
     }
 
-    /* ACHIEVEMENTS */
     .achievements-container{
       display:grid;
       grid-template-columns:repeat(2,1fr);
@@ -718,7 +708,6 @@
       line-height:1.6;
     }
 
-    /* CHARTS GRID - CLEAN VERSION ONLY */
     .chart-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
@@ -745,7 +734,6 @@
       height:350px;
     }
 
-    /* EXPERIENCE */
     .experience-list{
       display:grid;
       gap:32px;
@@ -808,7 +796,6 @@
       font-weight:600;
     }
 
-    /* PROCESS */
     .steps{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -846,7 +833,6 @@
       box-shadow:0 20px 50px rgba(212,175,55,0.2);
     }
 
-    /* PROJECTS */
     .projects{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -924,7 +910,6 @@
       opacity:1;
     }
 
-    /* SKILLS */
     .skills-container{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -965,7 +950,6 @@
       font-weight:600;
     }
 
-    /* CERTIFICATIONS */
     .certifications{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -998,7 +982,6 @@
       color:var(--muted);
     }
 
-    /* CONTACT */
     .contact-box{
       background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));
       border:1px solid rgba(212,175,55,0.25);
@@ -1167,7 +1150,6 @@
 </header>
 
 <main>
-  <!-- HERO -->
   <section id="hero" class="fade-in">
     <div class="hero">
       <div>
@@ -1202,7 +1184,6 @@
     </div>
   </section>
 
-  <!-- ACHIEVEMENTS + CHARTS -->
   <section id="achievements" class="angled fade-in">
     <div class="section-label">Track Record</div>
     <h2 class="section-title">Impactful Achievements & Metrics</h2>
@@ -1254,7 +1235,6 @@
       </div>
     </div>
 
-    <!-- CLEAN CHART GRID (FIXED CANVAS IDS) -->
     <div style="margin-top:64px;">
       <div class="section-label" style="margin-top:32px;">Analytics & Insights</div>
       <h2 class="section-title" style="margin-bottom:32px;">Performance Metrics & Impact Visualizations</h2>
@@ -1291,7 +1271,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="fade-in">
     <div class="section-label">Who I Am</div>
     <h2 class="section-title">Engineering Trust Through Data Excellence</h2>
@@ -1322,7 +1301,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience" class="angled fade-in">
     <div class="section-label">Career Timeline</div>
     <h2 class="section-title">Professional Experience</h2>
@@ -1395,7 +1373,6 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section id="process" class="fade-in">
     <div class="section-label">Methodology</div>
     <h2 class="section-title">Proven Path to Analytics Success</h2>
@@ -1426,7 +1403,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="angled fade-in">
     <div class="section-label">Selected Work</div>
     <h2 class="section-title">Analytics & ML in Production</h2>
@@ -1484,7 +1460,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="fade-in">
     <div class="section-label">Technical Arsenal</div>
     <h2 class="section-title">Skills & Expertise</h2>
@@ -1566,7 +1541,6 @@
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications" class="angled fade-in">
     <div class="section-label">Credentials</div>
     <h2 class="section-title">Certifications & Recognition</h2>
@@ -1592,7 +1566,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="fade-in">
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title">Let's Build Your Analytics Edge</h2>
@@ -1657,7 +1630,6 @@
 </footer>
 
 <script>
-  // Generate particles
   function createParticles(){
     const particlesContainer = document.querySelector('.particles');
     for(let i = 0; i < 40; i++){
@@ -1672,7 +1644,6 @@
   }
   createParticles();
 
-  // Animation for particles
   const style = document.createElement('style');
   style.textContent = `
     @keyframes float{
@@ -1683,7 +1654,6 @@
   `;
   document.head.appendChild(style);
 
-  // Chart.js base config
   const chartConfig = {
     responsive: true,
     maintainAspectRatio: false,
@@ -1708,7 +1678,6 @@
     }
   };
 
-  // Career Growth Chart
   const careerCtx = document.getElementById('careerChart').getContext('2d');
   new Chart(careerCtx, {
     type: 'line',
@@ -1742,7 +1711,6 @@
     options: chartConfig
   });
 
-  // Business Value Chart
   const valueCtx = document.getElementById('valueChart').getContext('2d');
   new Chart(valueCtx, {
     type: 'bar',
@@ -1768,7 +1736,6 @@
     options: chartConfig
   });
 
-  // Industry Distribution Chart
   const industryCtx = document.getElementById('industryChart').getContext('2d');
   new Chart(industryCtx, {
     type: 'doughnut',
@@ -1799,7 +1766,6 @@
     }
   });
 
-  // Performance Chart (horizontal bar via indexAxis)
   const performanceCtx = document.getElementById('performanceChart').getContext('2d');
   new Chart(performanceCtx, {
     type: 'bar',
@@ -1819,7 +1785,6 @@
     }
   });
 
-  // Nav highlight on scroll
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -1840,7 +1805,6 @@
   );
   sections.forEach((sec) => sectionObserver.observe(sec));
 
-  // Fade-in animation on scroll
   const fades = document.querySelectorAll(".fade-in");
   const fadeObserver = new IntersectionObserver(
     (entries) => {
@@ -1855,7 +1819,6 @@
   );
   fades.forEach((el) => fadeObserver.observe(el));
 
-  // Form handler
   function handleFormSubmit(e){
     e.preventDefault();
     const name = document.getElementById("name").value.trim() || "there";
@@ -1875,29 +1838,24 @@
     }, 3000);
   }
 
-  // Copy to clipboard
   function copyToClipboard(text){
     navigator.clipboard.writeText(text).then(() => {
       alert('Email copied to clipboard!');
     });
   }
 
-  // Open email
   function openEmail(){
     window.location.href = 'mailto:hrushisingh697@gmail.com?subject=Analytics Project Inquiry';
   }
 
-  // Open external links
   function openLink(url){
     window.open(url, '_blank');
   }
 
-  // Download resume
   function downloadResume(){
     alert('Resume download link: /documents/Hrushikesh_Singh_Resume.pdf');
   }
 
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e){
       e.preventDefault();
