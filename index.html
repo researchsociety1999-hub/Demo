@@ -4,64 +4,45 @@
   <meta charset="UTF-8" />
   <title>Hrushikesh Singh Bondili — Analytics & Data Strategy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Chart.js (optional for small visuals) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     :root{
-      --bg:#0b0f1e;
-      --bg-alt:#0e1426;
-      --gold:#d4af37;
-      --gold-2:#e8c547;
-      --text:#f6f7fb;
-      --muted:#9aa3b8;
-      --line:#1c2a4c;
-      --accent:#ffd24d;
-      --danger:#ff4d4f;
-      --radius:16px;
+      --bg:#0b0f1e; --bg-alt:#0e1426; --gold:#d4af37; --gold-2:#e8c547;
+      --text:#f6f7fb; --muted:#9aa3b8; --line:#1c2a4c; --accent:#ffd24d;
+      --danger:#ff4d4f; --radius:16px;
     }
-
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit}
 
-    /* Top rates/ticker bar */
+    /* Topbar */
     .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:20px;padding:10px 6vw;background:#0c1224;border-bottom:1px solid rgba(212,175,55,.25);
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:10px 6vw;background:#0c1224;border-bottom:1px solid rgba(212,175,55,.25);
     }
-    .ticker{
-      display:flex;gap:18px;flex-wrap:wrap
-    }
-    .tick{
-      display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem
-    }
+    .ticker{display:flex;gap:18px;flex-wrap:wrap}
+    .tick{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem}
     .tick .coin{color:var(--gold);font-weight:700}
     .tick .price{color:#cfe0ff}
-    .tick .change.up{color:#7dff7a}
-    .tick .change.down{color:var(--danger)}
+    .change{font-weight:700}
+    .up{color:#7dff7a}.down{color:var(--danger)}
     .top-contacts{display:flex;gap:18px;align-items:center;color:var(--muted);font-size:.9rem}
     .cta-small{
-      padding:8px 14px;border:1px solid var(--gold);border-radius:999px;color:#0b0f1e;background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      padding:8px 14px;border:1px solid var(--gold);border-radius:999px;color:#0b0f1e;
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));
       font-weight:800;text-transform:uppercase;letter-spacing:.06em;cursor:pointer
     }
 
-    /* Header */
+    /* Sticky header */
     header{
-      position:sticky;top:0;z-index:30;
-      backdrop-filter:blur(14px);
+      position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);
       background:linear-gradient(180deg,rgba(11,15,30,.95),rgba(11,15,30,.75),transparent);
       border-bottom:1px solid rgba(212,175,55,.15);
     }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;padding:14px 6vw
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px
-    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 6vw}
+    .brand{display:flex;align-items:center;gap:12px}
     .logo{
-      width:38px;height:38px;border-radius:10px;
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
-      box-shadow:0 0 22px rgba(212,175,55,.55);
-      display:flex;align-items:center;justify-content:center;font-weight:900;color:#0b0f1e
+      width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      box-shadow:0 0 22px rgba(212,175,55,.55);display:flex;align-items:center;justify-content:center;font-weight:900;color:#0b0f1e
     }
     .brand-name{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-size:.95rem}
     .menu{display:flex;gap:22px;flex-wrap:wrap}
@@ -77,17 +58,18 @@
     }
 
     /* Sections */
-    section{padding:90px 6vw;border-top:1px solid rgba(212,175,55,.08)}
+    section{
+      padding:90px 6vw;border-top:1px solid rgba(212,175,55,.08);
+      scroll-margin-top:110px; /* prevents the sticky header from covering titles */
+    }
     .section-label{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800;margin-bottom:10px}
     .title{font-size:2.6rem;font-weight:900;letter-spacing:-.01em;margin:10px 0 14px}
     .desc{max-width:760px;color:var(--muted);font-size:1.05rem;line-height:1.7}
 
     /* Hero */
-    .hero{
-      display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center
-    }
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
     .hero h1{font-size:3.8rem;line-height:1.08;margin:0}
-    .hero h1 .emph{background:linear-gradient(90deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .emph{background:linear-gradient(90deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
     .hero-metrics{display:flex;gap:26px;flex-wrap:wrap;margin:24px 0}
     .metric{border-left:3px solid var(--gold);padding-left:14px}
     .metric .val{font-weight:900;color:var(--gold);font-size:1.7rem;line-height:1}
@@ -101,10 +83,7 @@
       padding:14px 24px;border:1.5px solid var(--gold);border-radius:10px;background:transparent;color:var(--gold);
       font-weight:900;text-transform:uppercase;letter-spacing:.08em;cursor:pointer
     }
-    .hero-visual{
-      position:relative;aspect-ratio:1/1.1;border:1px solid rgba(212,175,55,.2);border-radius:16px;background:linear-gradient(160deg,#0e1426,#0a0f22);
-      overflow:hidden
-    }
+    .hero-visual{position:relative;aspect-ratio:1/1.1;border:1px solid rgba(212,175,55,.2);border-radius:16px;background:linear-gradient(160deg,#0e1426,#0a0f22);overflow:hidden}
     .hero-visual::before{
       content:"";position:absolute;inset:-30%;background:
       radial-gradient(60% 60% at 20% 20%,rgba(212,175,55,.18),transparent),
@@ -112,62 +91,40 @@
       radial-gradient(50% 50% at 50% 80%,rgba(212,175,55,.18),transparent);
       filter:blur(10px)
     }
-    .hero-visual-grid{
-      position:absolute;inset:0;background-image:linear-gradient(#152447 1px,transparent 1px),linear-gradient(90deg,#152447 1px,transparent 1px);
-      background-size:40px 40px;opacity:.25;animation:gridMove 14s linear infinite
-    }
+    .hero-visual-grid{position:absolute;inset:0;background-image:linear-gradient(#152447 1px,transparent 1px),linear-gradient(90deg,#152447 1px,transparent 1px);background-size:40px 40px;opacity:.25;animation:gridMove 14s linear infinite}
     @keyframes gridMove{to{transform:translate(40px,40px)}}
 
-    /* Intro (What is) */
-    .intro{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center
-    }
-    .intro-card{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:var(--radius);padding:28px
-    }
+    /* Intro */
+    .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+    .intro-card{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:var(--radius);padding:28px}
     .list{display:grid;gap:10px;margin-top:12px}
-    .list-item{color:var(--muted)}
-    .list-item::before{content:"▸ ";color:var(--gold);font-weight:900}
+    .list-item{color:var(--muted)} .list-item::before{content:"▸ ";color:var(--gold);font-weight:900}
 
-    /* How it starts */
+    /* Steps */
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .step{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px;text-align:center
-    }
-    .step .num{color:var(--gold);font-size:2rem;font-weight:900}
+    .step{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px;text-align:center}
+    .num{color:var(--gold);font-size:2rem;font-weight:900}
     .step .title{font-size:1.05rem;margin:8px 0;color:var(--text)}
     .step .txt{color:var(--muted);font-size:.95rem}
 
-    /* Rates / Plans */
+    /* Rates */
     .rates{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .rate{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:24px
-    }
+    .rate{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:24px}
     .rate .label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-    .rate .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(212,175,55,.15);color:var(--muted)}
-    .rate .row:last-child{border-bottom:none}
-    .rate .coin{color:var(--text);font-weight:800}
-    .rate .pct{color:var(--gold);font-weight:900}
+    .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(212,175,55,.15);color:var(--muted)}
+    .row:last-child{border-bottom:none}
+    .coin{color:var(--text);font-weight:800}
+    .pct{color:var(--gold);font-weight:900}
 
     /* Advantages */
     .advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .adv{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px;display:grid;gap:8px
-    }
-    .adv .icon{width:44px;height:44px;border:1.5px solid var(--gold);border-radius:10px;color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900}
-    .adv .t{font-weight:800}
-    .adv .d{color:var(--muted)}
+    .adv{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px;display:grid;gap:8px}
+    .icon{width:44px;height:44px;border:1.5px solid var(--gold);border-radius:10px;color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900}
+    .t{font-weight:800}.d{color:var(--muted)}
 
-    /* Experience (resume highlights) */
+    /* Experience */
     .experience{display:grid;gap:18px}
-    .exp{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px
-    }
+    .exp{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px}
     .exp-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
     .exp-role{font-weight:800;color:var(--text)}
     .exp-meta{color:var(--gold);font-size:.9rem}
@@ -177,32 +134,24 @@
 
     /* Projects */
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .proj{
-      background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));
-      border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px
-    }
-    .proj .tagline{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#0b0f1e;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:900}
+    .proj{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:22px}
+    .tagline{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#0b0f1e;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:900}
     .proj h3{margin:12px 0;font-size:1.2rem}
-    .proj .metric{color:var(--gold);font-weight:900;font-size:1.1rem}
+    .metric{color:var(--gold);font-weight:900;font-size:1.1rem}
     .proj ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
     .proj ul li{margin:6px 0}
 
     /* Contact */
-    .contact-box{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:26px
-    }
+    .contact-box{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
     form{display:grid;gap:14px}
     label{color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:900}
-    input,textarea{
-      width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(212,175,55,.25);
-      background:#0d1225;color:var(--text)
-    }
+    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(212,175,55,.25);background:#0d1225;color:var(--text)}
     textarea{min-height:120px}
     .contact-info{display:grid;gap:12px}
     .info-item{display:flex;gap:12px;align-items:flex-start}
     .info-icon{width:40px;height:40px;border:1.5px solid var(--gold);border-radius:10px;color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900}
-    .info-text .lab{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
-    .info-text .val{color:var(--text)}
+    .lab{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+    .val{color:var(--text)}
 
     /* Footer */
     footer{padding:18px 6vw;color:var(--muted);border-top:1px solid rgba(212,175,55,.15);background:#0b0f1e;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
@@ -228,21 +177,16 @@
   </style>
 </head>
 <body>
-
-  <!-- Topbar with rates and contacts -->
+  <!-- Topbar -->
   <div class="topbar">
-    <div class="ticker" id="ticker">
-      <div class="tick"><span class="coin">BTC</span><span class="price" id="btc">-</span><span class="change up" id="btcChg">+0.0%</span></div>
-      <div class="tick"><span class="coin">ETH</span><span class="price" id="eth">-</span><span class="change down" id="ethChg">-0.0%</span></div>
-      <div class="tick"><span class="coin">LTC</span><span class="price" id="ltc">-</span><span class="change up" id="ltcChg">+0.0%</span></div>
+    <div class="ticker">
+      <div class="tick"><span class="coin">BTC</span><span class="price" id="btc">—</span><span id="btcChg" class="change up">+0.0%</span></div>
+      <div class="tick"><span class="coin">ETH</span><span class="price" id="eth">—</span><span id="ethChg" class="change down">-0.0%</span></div>
+      <div class="tick"><span class="coin">LTC</span><span class="price" id="ltc">—</span><span id="ltcChg" class="change up">+0.0%</span></div>
     </div>
     <div class="top-contacts">
-      <span>Los Angeles, CA</span>
-      <span>|</span>
-      <span>(203) 994-4997</span>
-      <span>|</span>
-      <span>hrushisingh697@gmail.com</span>
-      <button class="cta-small" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply online</button>
+      <span>Los Angeles, CA</span><span>|</span><span>(203) 994-4997</span><span>|</span><span>hrushisingh697@gmail.com</span>
+      <button class="cta-small" onclick="scrollToId('contact')">Apply online</button>
     </div>
   </div>
 
@@ -250,10 +194,10 @@
   <header>
     <div class="nav">
       <div class="brand">
-        <div class="logo">HS</div>
+        <div class="logo" aria-label="HS logo">HS</div>
         <div class="brand-name">Analytics Pro</div>
       </div>
-      <nav class="menu">
+      <nav class="menu" aria-label="Primary">
         <a href="#hero">Home</a>
         <a href="#intro">What is</a>
         <a href="#how">How to start</a>
@@ -280,17 +224,15 @@
           <div class="metric"><div class="val">$500K+</div><div class="lab">Annual savings</div></div>
         </div>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View projects</button>
-          <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch →</button>
+          <button class="btn-primary" onclick="scrollToId('projects')">View projects</button>
+          <button class="btn-ghost" onclick="scrollToId('contact')">Get in touch →</button>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-visual-grid"></div>
-      </div>
+      <div class="hero-visual"><div class="hero-visual-grid"></div></div>
     </div>
   </section>
 
-  <!-- Intro: What is (your value proposition like COINLOMBARD "what is") -->
+  <!-- Intro -->
   <section id="intro">
     <div class="section-label">What I Build</div>
     <h2 class="title">Enterprise analytics that scale, comply, and perform</h2>
@@ -312,43 +254,27 @@
         <div class="list">
           <div class="list-item">25% faster reporting cycles; 40% faster ETL pipelines</div>
           <div class="list-item">35% higher data accuracy; 3 clean audits; full SOX control coverage</div>
-          <div class="list-item">$500K+ annual savings (predictive maintenance); $2M+ expansion approved</div>
+          <div class="list-item">$500K+ annual savings; $2M+ expansion enabled</div>
           <div class="list-item">200+ users; 50K+ daily transactions supported</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How to start (4 steps like the image) -->
+  <!-- How -->
   <section id="how">
     <div class="section-label">How to start</div>
     <h2 class="title">A simple path to reliable analytics</h2>
     <p class="desc">Clarity first, then design for scale. I use a repeatable method to reduce risk and ship value early.</p>
     <div class="steps">
-      <div class="step">
-        <div class="num">01</div>
-        <div class="title">Discover</div>
-        <div class="txt">Goals, KPIs, data landscape, compliance needs, success metrics.</div>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <div class="title">Design</div>
-        <div class="txt">Semantic models, contracts, SLAs, governance frameworks.</div>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <div class="title">Build</div>
-        <div class="txt">ETL/ELT, ML models, BI dashboards, testing and runbooks.</div>
-      </div>
-      <div class="step">
-        <div class="num">04</div>
-        <div class="title">Scale</div>
-        <div class="txt">Monitoring, ownership transfer, training, and documentation.</div>
-      </div>
+      <div class="step"><div class="num">01</div><div class="title">Discover</div><div class="txt">Goals, KPIs, data landscape, compliance, success metrics.</div></div>
+      <div class="step"><div class="num">02</div><div class="title">Design</div><div class="txt">Semantic models, contracts, SLAs, governance frameworks.</div></div>
+      <div class="step"><div class="num">03</div><div class="title">Build</div><div class="txt">ETL/ELT, ML models, BI dashboards, testing and runbooks.</div></div>
+      <div class="step"><div class="num">04</div><div class="title">Scale</div><div class="txt">Monitoring, ownership transfer, training, documentation.</div></div>
     </div>
   </section>
 
-  <!-- Rates / Plans (adapted as engagement tiers) -->
+  <!-- Rates -->
   <section id="rates">
     <div class="section-label">Engagements</div>
     <h2 class="title">Transparent tiers that match your ambition</h2>
@@ -380,36 +306,12 @@
     <div class="section-label">Advantages</div>
     <h2 class="title">Why teams choose me</h2>
     <div class="advantages">
-      <div class="adv">
-        <div class="icon">⚡</div>
-        <div class="t">Speed with rigor</div>
-        <div class="d">25% faster reporting; 40% faster pipelines without breaking compliance.</div>
-      </div>
-      <div class="adv">
-        <div class="icon">🛡</div>
-        <div class="t">Governance-first</div>
-        <div class="d">Lineage, metadata, audits—SOX/HIPAA-ready from day one.</div>
-      </div>
-      <div class="adv">
-        <div class="icon">📈</div>
-        <div class="t">Measured impacts</div>
-        <div class="d">$500K+ annual savings; $2M+ expansion enabled; 200+ users supported.</div>
-      </div>
-      <div class="adv">
-        <div class="icon">🔗</div>
-        <div class="t">Seamless stacks</div>
-        <div class="d">Azure, AWS, Databricks, Power BI/Tableau, XGBoost, SQL optimization.</div>
-      </div>
-      <div class="adv">
-        <div class="icon">🔍</div>
-        <div class="t">Clarity & trust</div>
-        <div class="d">Executive-ready dashboards; clean KPIs; transparent contracts.</div>
-      </div>
-      <div class="adv">
-        <div class="icon">🤝</div>
-        <div class="t">Stakeholder fluency</div>
-        <div class="d">Workshops, BRD/FRD, Agile delivery, risk mitigation.</div>
-      </div>
+      <div class="adv"><div class="icon">⚡</div><div class="t">Speed with rigor</div><div class="d">25% faster reporting; 40% faster pipelines without breaking compliance.</div></div>
+      <div class="adv"><div class="icon">🛡</div><div class="t">Governance-first</div><div class="d">Lineage, metadata, audits—SOX/HIPAA-ready from day one.</div></div>
+      <div class="adv"><div class="icon">📈</div><div class="t">Measured impacts</div><div class="d">$500K+ annual savings; $2M+ expansion enabled; 200+ users supported.</div></div>
+      <div class="adv"><div class="icon">🔗</div><div class="t">Seamless stacks</div><div class="d">Azure, AWS, Databricks, Power BI/Tableau, XGBoost, SQL optimization.</div></div>
+      <div class="adv"><div class="icon">🔍</div><div class="t">Clarity & trust</div><div class="d">Executive-ready dashboards; clean KPIs; transparent contracts.</div></div>
+      <div class="adv"><div class="icon">🤝</div><div class="t">Stakeholder fluency</div><div class="d">Workshops, BRD/FRD, Agile delivery, risk mitigation.</div></div>
     </div>
   </section>
 
@@ -419,46 +321,22 @@
     <h2 class="title">Professional timeline</h2>
     <div class="experience">
       <div class="exp">
-        <div class="exp-head">
-          <div>
-            <div class="exp-role">Senior Business Analyst — CVS Health</div>
-            <div class="exp-meta">Feb 2025 – Present · Los Angeles, CA</div>
-          </div>
-          <div class="exp-meta">99.9% SLAs</div>
-        </div>
+        <div class="exp-head"><div><div class="exp-role">Senior Business Analyst — CVS Health</div><div class="exp-meta">Feb 2025 – Present · Los Angeles, CA</div></div><div class="exp-meta">99.9% SLAs</div></div>
         <div class="exp-desc">Rolled out Power BI platform for 200+ users with automated data quality checks; 25% faster reporting. Set metadata/DQ standards reducing defects by 35% while sustaining 100% SDLC/SOX control compliance.</div>
         <div class="tags"><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">Governance</span><span class="tag">ETL</span></div>
       </div>
       <div class="exp">
-        <div class="exp-head">
-          <div>
-            <div class="exp-role">Systems Business Analyst — DXC Technology</div>
-            <div class="exp-meta">Jun 2024 – Dec 2024 · Remote</div>
-          </div>
-          <div class="exp-meta">97% on-time</div>
-        </div>
+        <div class="exp-head"><div><div class="exp-role">Systems Business Analyst — DXC Technology</div><div class="exp-meta">Jun 2024 – Dec 2024 · Remote</div></div><div class="exp-meta">97% on-time</div></div>
         <div class="exp-desc">Led Azure Synapse migration requirements; SLAs 99.9%, contracts, lineage. Built DQ framework (SQL DQS + Python) cutting issues by 35% and improving query performance by 40%.</div>
         <div class="tags"><span class="tag">Azure Synapse</span><span class="tag">SQL</span><span class="tag">Python</span></div>
       </div>
       <div class="exp">
-        <div class="exp-head">
-          <div>
-            <div class="exp-role">Business Analyst — Infosys BPM</div>
-            <div class="exp-meta">Jul 2021 – Aug 2023 · Hyderabad, India</div>
-          </div>
-          <div class="exp-meta">150+ users</div>
-        </div>
+        <div class="exp-head"><div><div class="exp-role">Business Analyst — Infosys BPM</div><div class="exp-meta">Jul 2021 – Aug 2023 · Hyderabad, India</div></div><div class="exp-meta">150+ users</div></div>
         <div class="exp-desc">Delivered 6 BI dashboards with automated SQL refresh; eliminated 70% manual reporting and saved 18+ hours/month; enabled 150+ daily self‑service users.</div>
         <div class="tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">SQL</span></div>
       </div>
       <div class="exp">
-        <div class="exp-head">
-          <div>
-            <div class="exp-role">Junior Business Analyst — TatvaSoft</div>
-            <div class="exp-meta">Jan 2020 – Jun 2021 · Hyderabad, India</div>
-          </div>
-          <div class="exp-meta">99.99% success</div>
-        </div>
+        <div class="exp-head"><div><div class="exp-role">Junior Business Analyst — TatvaSoft</div><div class="exp-meta">Jan 2020 – Jun 2021 · Hyderabad, India</div></div><div class="exp-meta">99.99% success</div></div>
         <div class="exp-desc">BRDs/FRDs for API‑first fintech system handling 50K+ daily txns; ETL refactors cut runtime 40% (45→27 min). BPMN/Jira automation reduced change cycle time by 30%.</div>
         <div class="tags"><span class="tag">BRD/FRD</span><span class="tag">ETL</span><span class="tag">BPMN</span></div>
       </div>
@@ -507,7 +385,7 @@
     <h2 class="title">Ask a question</h2>
     <p class="desc">Share your analytics challenge. I’ll reply with a plan and ROI estimates within 24 hours.</p>
     <div class="contact-box">
-      <form id="contact-form" onsubmit="handleFormSubmit(event)">
+      <form id="contact-form">
         <div>
           <label for="name">Full name</label>
           <input id="name" type="text" required placeholder="Your name">
@@ -530,79 +408,75 @@
       <div class="contact-info">
         <div class="info-item">
           <div class="info-icon">✉</div>
-          <div class="info-text">
-            <div class="lab">Email</div>
-            <div class="val"><a href="mailto:hrushisingh697@gmail.com" style="color:inherit;text-decoration:none">hrushisingh697@gmail.com</a></div>
-          </div>
+          <div><div class="lab">Email</div><div class="val"><a href="mailto:hrushisingh697@gmail.com">hrushisingh697@gmail.com</a></div></div>
         </div>
         <div class="info-item">
           <div class="info-icon">in</div>
-          <div class="info-text">
-            <div class="lab">LinkedIn</div>
-            <div class="val"><a href="https://linkedin.com/in/hrushikesh-singh" target="_blank" style="color:inherit;text-decoration:none">linkedin.com/in/hrushikesh-singh</a></div>
-          </div>
+          <div><div class="lab">LinkedIn</div><div class="val"><a href="https://linkedin.com/in/hrushikesh-singh" target="_blank">linkedin.com/in/hrushikesh-singh</a></div></div>
         </div>
         <div class="info-item">
           <div class="info-icon">GH</div>
-          <div class="info-text">
-            <div class="lab">GitHub</div>
-            <div class="val"><a href="https://github.com/hrushikesh-singh" target="_blank" style="color:inherit;text-decoration:none">github.com/hrushikesh-singh</a></div>
-          </div>
+          <div><div class="lab">GitHub</div><div class="val"><a href="https://github.com/hrushikesh-singh" target="_blank">github.com/hrushikesh-singh</a></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <span>© 2025 Hrushikesh Singh Bondili</span>
     <span>Built with HTML, CSS, JS • Dark gold crypto theme</span>
   </footer>
 
   <script>
-    // Lightweight mock rates (no external API — update manually or wire an API later)
-    const rates = {
-      BTC: { price: 72654, change: +1.2 },
-      ETH: { price: 3567, change: -0.8 },
-      LTC: { price: 89.4, change: +0.4 }
-    };
-    function updateTicker(){
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ticker mock (stable, no external calls)
+      const rates = { BTC:{price:72654, change:+1.2}, ETH:{price:3567, change:-0.8}, LTC:{price:89.4, change:+0.4} };
       const fmt = (n)=> Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
-      document.getElementById('btc').textContent = '$' + fmt(rates.BTC.price);
-      document.getElementById('eth').textContent = '$' + fmt(rates.ETH.price);
-      document.getElementById('ltc').textContent = '$' + fmt(rates.LTC.price);
-      const setChg = (id,val)=>{
-        const el = document.getElementById(id);
+      const setText = (id, text)=>{ const el=document.getElementById(id); if(el) el.textContent=text; };
+      const setChange = (id,val)=>{
+        const el=document.getElementById(id);
+        if(!el) return;
         el.textContent = (val>0?'+':'') + val.toFixed(1) + '%';
-        el.className = 'change ' + (val>=0?'up':'down');
+        el.classList.remove('up','down');
+        el.classList.add(val>=0?'up':'down');
       };
-      setChg('btcChg', rates.BTC.change);
-      setChg('ethChg', rates.ETH.change);
-      setChg('ltcChg', rates.LTC.change);
-    }
-    updateTicker();
+      setText('btc', '$'+fmt(rates.BTC.price)); setChange('btcChg', rates.BTC.change);
+      setText('eth', '$'+fmt(rates.ETH.price)); setChange('ethChg', rates.ETH.change);
+      setText('ltc', '$'+fmt(rates.LTC.price)); setChange('ltcChg', rates.LTC.change);
 
-    // Contact form handler
-    function handleFormSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim() || 'there';
-      const email = document.getElementById('email').value.trim();
-      const company = document.getElementById('company').value.trim();
-      const message = document.getElementById('message').value.trim();
+      // Contact form
+      const form = document.getElementById('contact-form');
       const status = document.getElementById('form-status');
+      if(form){
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim() || 'there';
+          const email = document.getElementById('email').value.trim();
+          const company = document.getElementById('company').value.trim();
+          const message = document.getElementById('message').value.trim();
 
-      status.style.color = 'var(--gold)';
-      status.textContent = `✓ Thanks, ${name}. I’ll reply within 24 hours.`;
-      console.log({name,email,company,message});
+          if(!email || !message){
+            status.style.color = 'var(--danger)';
+            status.textContent = 'Please provide a valid email and your question.';
+            return;
+          }
+          status.style.color = 'var(--gold)';
+          status.textContent = `✓ Thanks, ${name}. I’ll reply within 24 hours.`;
+          console.log({name,email,company,message});
+          setTimeout(()=>{ status.textContent=''; form.reset(); }, 3000);
+        });
+      }
+    });
 
-      setTimeout(()=>{ status.textContent=''; e.target.reset(); }, 3000);
+    // Smooth scroll helper (accounts for sticky header via CSS scroll-margin-top)
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     }
 
-    // Resume download (replace with actual file path)
+    // Resume download (opens in new tab; replace with your hosted path for auto-download)
     function downloadResume(){
       const url = '/documents/Hrushikesh_Singh_Bondili_Resume.pdf';
-      alert('Downloading resume...');
-      // Fallback to opening — replace with a real hosted path for automatic download
       window.open(url, '_blank');
     }
   </script>
